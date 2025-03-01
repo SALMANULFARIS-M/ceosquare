@@ -1,0 +1,22 @@
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+.glass-card:hover {
+  transform: translateY(-10px);
+}
+@keyframes morphBorder {
+  0% { border-radius: 0; }
+  25% { border-radius: 100% 0 0 0; }  /* Top-left rounded */
+  50% { border-radius: 0 100% 100% 0; } /* Left-full */
+  75% { border-radius: 0 0 0 100%; } /* Bottom-left rounded */
+  100% { border-radius: 0; } /* Back to normal */
+}
+
+.animate-border {
+  animation: morphBorder 6s infinite ease-in-out;
+}
