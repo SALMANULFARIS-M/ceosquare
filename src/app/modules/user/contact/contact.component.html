@@ -1,106 +1,227 @@
-  <!-- Header Section -->
-  <header class="relative h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDc1k4s1u3gPM3ElpB6Kudi2G9aBI6ExfU6yk18hKytoPFnb-sGw4l5gz9qogVHqaArxM&usqp=CAU');">
-    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-    <div class="relative z-10 text-center">
-      <h1 class="text-5xl md:text-7xl font-bold mb-4">Empowering Leaders, Connecting Visionaries</h1>
-      <p class="text-xl md:text-2xl mb-8">Where Business Leaders Thrive Together</p>
-      <a href="#membership" class="bg-yellow-500 text-gray-900 px-8 py-3 rounded-full font-bold hover:bg-yellow-600 transition duration-300">Join CEO Square</a>
-    </div>
-  </header>
+<app-header></app-header>
+<section class="mb-32">
+  <div
+    id="map"
+    class="relative h-[300px] overflow-hidden bg-cover bg-[50%] bg-no-repeat"
+  >
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.6129024807638!2d77.61291607515628!3d12.932582987379224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x61232790fb5d417d%3A0x9aacf9858bc51027!2sStudy%20in%20bengaluru.in!5e0!3m2!1sen!2sin!4v1740035104399!5m2!1sen!2sin"
+      width="100%"
+      height="480"
+      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+  <div class="container px-6 md:px-12">
+    <div
+      class="block rounded-lg bg-gray-200 px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] md:py-16 md:px-12 -mt-[100px] backdrop-blur-[30px] border-2 border-[#2D1044]"
+    >
+      <div class="flex flex-wrap">
+        <div
+          class="mb-12 w-full shrink-0 grow-0 basis-auto md:px-3 lg:mb-0 lg:w-5/12 lg:px-6"
+        >
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+            <div class="relative mb-6" data-te-input-wrapper-init>
+              <input
+                type="text"
+                class="peer block min-h-[auto] w-full rounded border-2 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none"
+                id="name"
+                formControlName="name"
+                required
+              />
+              <label
+                class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-[#2D1044] transition-all duration-200 ease-out
+                  peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary
+                  peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8]
+                  motion-reduce:transition-none
+                  {{
+                  contactForm.get('name')!.value
+                    ? '-translate-y-[0.9rem] scale-[0.8]'
+                    : ''
+                }}"
+                for="name"
+                >Name</label
+              >
+            </div>
 
-  <!-- Features Section -->
-  <section class="py-20 bg-gray-800">
-    <div class="container mx-auto px-6">
-      <h2 class="text-4xl font-bold text-center mb-12">Why CEO Square?</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="text-center">
-          <div class="text-yellow-500 text-5xl mb-4">🌐</div>
-          <h3 class="text-2xl font-bold mb-4">Global Networking</h3>
-          <p class="text-gray-300">Connect with visionary leaders across industries.</p>
+            <div class="relative mb-6" data-te-input-wrapper-init>
+              <input
+                type="email"
+                class="peer block min-h-[auto] w-full rounded border-2 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none"
+                id="email"
+                formControlName="email"
+                required
+              />
+              <label
+                class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-[#2D1044] transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0
+                {{
+                  contactForm.get('email')!.value
+                    ? '-translate-y-[0.9rem] scale-[0.8]'
+                    : ''
+                }}"
+                for="email"
+                >Email address</label
+              >
+              <span
+                *ngIf="
+                  contactForm.controls['email'].invalid &&
+                  contactForm.controls['email'].touched
+                "
+                class="text-red-500"
+              >
+                Please enter a valid email address.
+              </span>
+            </div>
+
+            <div class="relative mb-6" data-te-input-wrapper-init>
+              <textarea
+                formControlName="message"
+                class="peer block min-h-[auto] w-full rounded border-2 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none"
+                id="message"
+                rows="3"
+                required
+              ></textarea>
+              <label
+                for="message"
+                class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-[#2D1044] transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0
+                {{
+                  contactForm.get('message')!.value
+                    ? '-translate-y-[0.9rem] scale-[0.8]'
+                    : ''
+                }}"
+                >Message</label
+              >
+            </div>
+
+            <button
+              type="submit"
+              class="text-[#2D1044] border-2 noto-serif-custom-1 md:w-80 border-white/30 hover:border-white/50 backdrop-blur-md px-4 py-3 text-lg atkinson-hyperlegible-next-custom-2 rounded-2xl font-medium bg-black/50 hover:bg-white/20 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform-gpu block mx-auto md:px-3 md:py-2 md:text-base"
+            >
+              Submit
+            </button>
+          </form>
         </div>
-        <div class="text-center">
-          <div class="text-yellow-500 text-5xl mb-4">🎤</div>
-          <h3 class="text-2xl font-bold mb-4">Exclusive Events</h3>
-          <p class="text-gray-300">Participate in high-profile roundtables and global conferences.</p>
-        </div>
-        <div class="text-center">
-          <div class="text-yellow-500 text-5xl mb-4">📚</div>
-          <h3 class="text-2xl font-bold mb-4">Leadership Training</h3>
-          <p class="text-gray-300">Hone your skills with personalized mentorship and training.</p>
+        <div class="w-full shrink-0 grow-0 basis-auto lg:w-7/12">
+          <div class="flex flex-wrap">
+            <div
+              class="mb-12 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:mb-12 lg:w-full lg:px-6 xl:w-6/12"
+            >
+              <div class="align-start flex">
+                <div class="shrink-0">
+                  <a href="https://wa.me/9946953953" target="_blank">
+                    <div
+                      class="inline-block rounded-md bg-white shadow-md p-3 text-[#2D1044]"
+                    >
+                      <i class="bx bxl-whatsapp text-4xl"></i>
+                    </div>
+                  </a>
+                </div>
+                <div class="ml-6 grow">
+                  <p class="mb-2 font-bold text-[#2D1044] merriweather-bold">WhatsApp</p>
+                  <p class="text-[#2D1044]">
+                    <a href="https://wa.me/9946953953" target="_blank"
+                      >+91 9946953953</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:w-full lg:px-6 xl:mb-12 xl:w-6/12"
+            >
+              <div class="align-start flex">
+                <div class="shrink-0">
+                  <div
+                    class="inline-block rounded-md bg-white p-4 text-[#2D1044] merriweather-bold shadow-md"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-6 h-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="ml-6 grow">
+                  <p class="mb-2 font-bold text-[#2D1044] merriweather-bold">Mobile</p>
+                  <p class="text-[#2D1044]">+91 9946953953</p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="mb-12 mt-4 md:mt-0 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:mb-12 lg:w-full lg:px-6 xl:w-6/12"
+            >
+              <div class="align-start flex">
+                <div class="shrink-0">
+                  <a href="mailto:info@studyinbengaluru.com">
+                    <div
+                      class="inline-block rounded-md bg-white shadow-md p-4 text-[#2D1044]"
+                    >
+                      <i class="bx bxs-envelope text-3xl"></i>
+                    </div>
+                  </a>
+                </div>
+                <div class="ml-6 grow">
+                  <p class="mb-2 font-bold text-[#2D1044] merriweather-bold">Email</p>
+                  <p class="text-[#2D1044]">
+                    <a
+                      href="mailto:info@studyinbengaluru.com"
+                      class="text-[#2D1044]"
+                      >info&#64;studyinbengaluru.com</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="mb-12 w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:w-full lg:px-6 xl:w-6/12"
+            >
+              <div class="flex items-start">
+                <div class="srink-0">
+                  <div
+                    class="inline-block rounded-md bg-white shadow-md p-4 text-[#2D1044]"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="2"
+                      stroke="currentColor"
+                      class="w-7 h-7"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm1.294 6.336a6.721 6.721 0 01-3.17.789 6.721 6.721 0 01-3.168-.789 3.376 3.376 0 016.338 0z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="ml-6 grow">
+                  <p class="mb-2 font-bold text-[#2D1044] merriweather-bold">Address</p>
+                  <p class="text-sm text-[#2D1044] pt-serif-regular">
+                    Studyinbengaluru , door no. 84, 3rd Cross Rd, 5th Block,
+                    Koramangala, Bengaluru, Karnataka 560095
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Membership Tiers Section -->
-  <section id="membership" class="py-20 bg-gray-900">
-    <div class="container mx-auto px-6">
-      <h2 class="text-4xl font-bold text-center mb-12">Choose Your Membership Plan</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Gold Membership -->
-        <div class="bg-gray-800 p-8 rounded-lg text-center">
-          <h3 class="text-2xl font-bold mb-4">Gold Membership</h3>
-          <p class="text-gray-300 mb-6">Access a dynamic hub connecting you with top-level CEOs and entrepreneurs.</p>
-          <a href="#" class="bg-yellow-500 text-gray-900 px-6 py-2 rounded-full font-bold hover:bg-yellow-600 transition duration-300">Learn More</a>
-        </div>
-        <!-- Platinum Membership -->
-        <div class="bg-gray-800 p-8 rounded-lg text-center">
-          <h3 class="text-2xl font-bold mb-4">Platinum Membership</h3>
-          <p class="text-gray-300 mb-6">Participate in exclusive, high-profile events and roundtable discussions.</p>
-          <a href="#" class="bg-yellow-500 text-gray-900 px-6 py-2 rounded-full font-bold hover:bg-yellow-600 transition duration-300">Learn More</a>
-        </div>
-        <!-- Diamond Membership -->
-        <div class="bg-gray-800 p-8 rounded-lg text-center">
-          <h3 class="text-2xl font-bold mb-4">Diamond Membership</h3>
-          <p class="text-gray-300 mb-6">Attend intimate, high-profile networking events with global investors.</p>
-          <a href="#" class="bg-yellow-500 text-gray-900 px-6 py-2 rounded-full font-bold hover:bg-yellow-600 transition duration-300">Learn More</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Testimonials Section -->
-  <section class="py-20 bg-gray-800">
-    <div class="container mx-auto px-6">
-      <h2 class="text-4xl font-bold text-center mb-12">What Our Members Say</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Testimonial 1 -->
-        <div class="bg-gray-900 p-8 rounded-lg">
-          <p class="text-gray-300 mb-4">"Joining CEO Square has been a game-changer for my business. The networking opportunities are unmatched."</p>
-          <p class="text-yellow-500 font-bold">- Shaaz, CEO – Ique Cap</p>
-        </div>
-        <!-- Testimonial 2 -->
-        <div class="bg-gray-900 p-8 rounded-lg">
-          <p class="text-gray-300 mb-4">"CEO Square provided strategic business coaching that directly impacted our success."</p>
-          <p class="text-yellow-500 font-bold">- Shefin, CEO – StudyinBengaluru</p>
-        </div>
-        <!-- Testimonial 3 -->
-        <div class="bg-gray-900 p-8 rounded-lg">
-          <p class="text-gray-300 mb-4">"The level of support and expertise at CEO Square is unmatched. It's a must for any CEO."</p>
-          <p class="text-yellow-500 font-bold">- Manasa, CEO – EMT & KCI</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer Section -->
-  <footer class="py-12 bg-gray-900">
-    <div class="container mx-auto px-6">
-      <div class="flex flex-col md:flex-row justify-between items-center">
-        <div class="mb-6 md:mb-0">
-          <h3 class="text-2xl font-bold text-yellow-500">CEO Square</h3>
-          <p class="text-gray-300">Empowering Global Leaders</p>
-        </div>
-        <div class="flex space-x-6">
-          <a href="#" class="text-gray-300 hover:text-yellow-500">About Us</a>
-          <a href="#" class="text-gray-300 hover:text-yellow-500">Membership</a>
-          <a href="#" class="text-gray-300 hover:text-yellow-500">Contact Us</a>
-        </div>
-        <div class="flex space-x-4 mt-6 md:mt-0">
-          <a href="#" class="text-gray-300 hover:text-yellow-500">🌐</a>
-          <a href="#" class="text-gray-300 hover:text-yellow-500">🐦</a>
-          <a href="#" class="text-gray-300 hover:text-yellow-500">📸</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+<app-footer></app-footer>
