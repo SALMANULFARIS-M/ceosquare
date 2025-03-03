@@ -20,3 +20,26 @@
 .animate-border {
   animation: morphBorder 6s infinite ease-in-out;
 }
+@keyframes testimonial-loop {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-testimonial-loop {
+  display: flex;
+  animation: testimonial-loop 15s linear infinite;
+}
+
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 15s linear infinite;
+}

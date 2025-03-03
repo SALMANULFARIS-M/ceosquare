@@ -19,7 +19,6 @@ export class HeaderComponent implements OnInit {
     { name: 'Home', link: '/' },
     { name: 'About', link: '/about' },
     { name: 'Membership', link: '/membership' },
-    { name: 'Podcasts', link: '/podcasts' },
     { name: 'Contact', link: '/contact' }
   ];
 
