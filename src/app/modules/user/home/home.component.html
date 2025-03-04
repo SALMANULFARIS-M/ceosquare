@@ -71,8 +71,28 @@
   </div>
 </div>
 
+
+<section class="text-center bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-md bg-fixed bg-center bg-cover relative" style="background-image: url('/bg.webp')">
+  <div class="absolute inset-0 bg-[#C0C9C6] opacity-70"></div>
+<div class="relative">
+  <div class="flex justify-center mb-4 sm:mb-6">
+      <img src="/logo-s.png" alt="CEO Square Logo" class="w-48 ">
+  </div>
+  <h1 class="text-xl sm:text-2xl font-semibold text-gray-800 playfair-display">
+      Welcome to <span class="text-blue-700 font-bold">CEO Square</span>
+  </h1>
+  <button class="mt-4 px-4 py-2 sm:px-6 sm:py-3 bg-gray-200 text-black font-semibold italic rounded-md shadow-md hover:bg-gray-300 transition duration-300">
+      <span class="text-black poppins-regular">Unlock Your Full</span><hr>
+      <span class="text-blue-700 italic montserrat ">Leadership Potential</span>
+  </button>
+  <p class="mt-4 sm:mt-6 text-sm sm:text-base text-gray-600 italic merriweather-regular text-justify">
+      At CEO Square, we’re building a global community where top CEOs, entrepreneurs, and business leaders unite to shape the future of business. Whether you're looking to expand your network, enhance your leadership skills, or position your business for success, CEO Square has the right tools, resources, and support for your journey.
+  </p>
+</div>
+</section>
+
   <!-- Value Proposition Section -->
-  <div class="relative py-16 bg-fixed bg-center bg-cover" style="background-image: url('/bg.webp')">
+  <div class="relative py-16 bg-fixed bg-center bg-cover border-t-2 border-gray-500" style="background-image: url('/bg.webp')">
     <!-- Overlay -->
     <div class="absolute inset-0 bg-[#C0C9C6] opacity-70"></div>
 
@@ -90,24 +110,24 @@
       </div>
 
       <div class="mt-12">
-        <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-x-8 md:gap-y-10">
+        <dl class="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-x-8 md:gap-y-10">
           <div
             *ngFor="let feature of features"
-            class="relative bg-white/20 border border-white/30 p-6 rounded-lg shadow-md hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 ease-in-out backdrop-blur-lg"
+            class="relative bg-white/20 border border-white/30 p-6 rounded-lg shadow-md hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 ease-in-out backdrop-blur-lg mb-8 md:mb-0"
           >
-            <dt>
+            <dt class="flex items-start">
               <div
-                class="absolute left-6 top-1/2 -translate-y-1/2 flex items-center justify-center h-14 w-14 rounded-md bg-blue-900 text-white transition-all duration-300 ease-in-out hover:bg-gray-400 hover:text-blue-900 shadow-lg"
+                class="flex items-center justify-center h-14 w-14 rounded-md bg-blue-900 text-white transition-all duration-300 ease-in-out hover:bg-gray-400 hover:text-blue-900 shadow-lg"
               >
                 <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path [attr.d]="feature.icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
                 </svg>
               </div>
-              <p class="ml-20 text-lg leading-6 font-semibold montserrat text-black transition-all duration-300">
+              <p class="ml-6 text-lg leading-6 font-semibold montserrat text-black transition-all duration-300">
                 {{ feature.title }}
               </p>
             </dt>
-            <dd class="mt-3 ml-20 text-base text-gray-700 text-justify merriweather-regular">
+            <dd class="mt-3 text-base text-gray-700 text-justify merriweather-regular">
               {{ feature.description }}
             </dd>
           </div>
@@ -481,7 +501,7 @@
   <div class="absolute inset-0 bg-[#C0C9C6] opacity-70"></div>
 
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="lg:text-center">
+    <div class="text-center lg:text-center">
       <h2
         class="poppins-semibold inline-block px-4 py-2 rounded-full text-gray-200 bg-blue-900 bg-opacity-10 text-sm tracking-wider uppercase mb-4"
       >
@@ -506,7 +526,7 @@
           *ngFor="let testimonial of testimonials.concat(testimonials)"
         >
           <div
-            class="bg-black/30 backdrop-blur-xs p-6 rounded-lg shadow-xl w-96 flex-shrink-0 border-2 border-blu-200 transition-transform transform hover:scale-105"
+            class="bg-black/40 backdrop-blur-xs p-6 rounded-lg shadow-xl w-96 flex-shrink-0 border-2 border-blu-200 transition-transform transform hover:scale-105"
           >
             <div class="flex items-center mb-4">
               <!-- If Image Exists, Show Image; Else, Show Initial -->
@@ -536,7 +556,7 @@
               </div>
             </div>
             <p
-              class="text-white text-justify text-sm leading-relaxed merriweather-light italic"
+              class="text-gray-950 text-justify text-sm leading-relaxed merriweather-light italic"
             >
               "{{ testimonial.message }}"
             </p>
