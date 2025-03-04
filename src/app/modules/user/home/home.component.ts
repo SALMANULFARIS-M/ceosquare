@@ -66,29 +66,37 @@ export class HomeComponent implements OnInit {
       icon: "M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
     }
   ];
-  testimonials = [
+   testimonials = [
     {
       name: 'Shaaz',
       designation: 'CEO – Ique Cap, Bengaluru, India',
-      message: 'Joining CEO Square has been a game-changer for my business. The networking opportunities provided have connected me with key leaders and investors who have helped take Ique Cap to the next level. The leadership training programs are top-notch, offering practical strategies that I’ve applied directly to my business. CEO Square truly understands what CEOs need to grow and thrive in today’s competitive environment.',
+      message: 'CEO Square provides the right space for founders to connect and grow. The meaningful conversations and collaborations here have been invaluable for me and my company. It’s a must-have network for any entrepreneur...',
       initial: 'S',
-      image: 'assets/testimonials/shaaz.jpg' // Replace with actual image URL or leave null
+      image: '/shaaz.jpg' // Replace with actual image URL or leave null
     },
     {
       name: 'Shefin',
       designation: 'CEO – StudyinBengaluru, Bengaluru, India',
-      message: 'As the CEO of a rapidly growing education platform, I needed guidance to navigate the challenges of scaling effectively. CEO Square provided not only valuable networking but also strategic business coaching that directly impacted our success. The exclusive podcasting opportunities have also allowed me to amplify my voice and reach a wider audience. CEO Square offers the perfect blend of leadership training, networking, and exposure.',
+      message: 'CEO Square has been a game-changer for me. The mentorship and networking opportunities have helped refine my strategies and expand my connections. It’s a community that truly supports entrepreneurs...',
       initial: 'S',
-      image: null // No image, so initials will be shown
+      image: '/shefin.JPG' // No image, so initials will be shown
     },
     {
       name: 'Hashim',
       designation: 'CEO – Career Cafe, Bengaluru, India',
-      message: 'CEO Square has been a transformative experience for me and my businesses. The level of support, expertise, and networking opportunities is unmatched. I’ve formed connections that have opened doors I didn’t even know existed. From personalized leadership coaching to podcasting that elevated my brand, CEO Square has become an indispensable part of my growth strategy. For any CEO looking to expand and innovate, this platform is a must.',
+      message: 'Joining CEO Square gave me access to the right people and insights to scale my business. The support and collaboration within the community have made a huge difference. It’s a space where entrepreneurs truly help each other succeed...',
       initial: 'H',
-      image: 'assets/testimonials/hashim.jpg'
+      image: '/hashim.jpg'
+    },
+    {
+      name: 'Indumathi Murthy',
+      designation: 'CEO – Incube Nation , Bengaluru, India',
+      message: 'CEO Square has been an incredible platform for meaningful connections and growth. Engaging with like-minded founders and industry experts has been a great experience. The support and mentorship here are truly empowering...',
+      initial: 'I',
+      image: '/indu.jpg'
     }
   ];
+
 
   ngOnDestroy() {
     if (isPlatformBrowser(this.platformId)) {

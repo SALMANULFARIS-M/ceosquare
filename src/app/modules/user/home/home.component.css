@@ -27,9 +27,11 @@
 
 .animate-testimonial-loop {
   display: flex;
-  animation: testimonial-loop 15s linear infinite;
+  animation: testimonial-loop 25s linear infinite;
 }
 
+.animate-testimonial-loop:hover {
+  animation-play-state: paused;}
 
 @keyframes spin-slow {
   from {
