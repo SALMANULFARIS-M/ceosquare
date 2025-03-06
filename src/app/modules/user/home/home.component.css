@@ -45,3 +45,27 @@
 .animate-spin-slow {
   animation: spin-slow 15s linear infinite;
 }
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-slide {
+  animation: fadeSlideIn 1s ease-out forwards;
+}
+
+/* Delay for the image to make it appear after the text */
+.animate-fade-slide-delay {
+  animation: fadeSlideIn 1s ease-out 0.5s forwards;
+  opacity: 0; /* Start with opacity 0 */
+}
+
+
+[appAnimation] {
+  will-change: opacity, transform;
+}

@@ -3,17 +3,19 @@ import { HeaderComponent } from '../../../shared/components/header/header.compon
 import { FooterComponent } from '../../../shared/components/footer/footer.component';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-contact',
-  imports: [HeaderComponent,FooterComponent,ReactiveFormsModule,CommonModule],
+  imports: [HeaderComponent, FooterComponent, ReactiveFormsModule, CommonModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css'
 })
 export class ContactComponent {
   contactForm: FormGroup;
+  isLoading = false; // Loader state
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private toastr: ToastrService) {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -25,18 +27,30 @@ export class ContactComponent {
 
   onSubmit() {
     if (this.contactForm.valid) {
-    //   this.service.sendContactForm(this.contactForm.value).subscribe({
-    //     next: (response) => {
-    //       this.toastr.success('Message sent successfully!', 'Success');
-    //       this.contactForm.reset(); // Reset the form after successful submission
-    //     },
-    //     error: (error) => {
-    //       this.toastr.error('There was an error sending your message.', 'Error');
-    //     }
-    //   });
-    // } else {
-    //   this.contactForm.markAllAsTouched();
-    //   this.toastr.warning('Please fill out the form correctly.', 'Validation Error');
-     }
+      this.isLoading = true; // Loader state
+
+      fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(this.contactForm.value),
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            this.isLoading = false; // Loader state
+            this.toastr.success('Message sent successfully!', 'Success');
+            this.contactForm.reset();
+          } else {
+            this.toastr.error('Error sending message.', 'Error');
+          }
+        })
+        .catch(() => {
+          this.toastr.error('Error sending message.', 'Error');
+        });
+    } else {
+      this.contactForm.markAllAsTouched();
+      this.toastr.warning('Please fill out the form correctly.', 'Validation Error');
+    }
   }
 }
+

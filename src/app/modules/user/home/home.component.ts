@@ -1,25 +1,32 @@
-import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { Component, ElementRef, Inject, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
 import { HeaderComponent } from '../../../shared/components/header/header.component';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FooterComponent } from '../../../shared/components/footer/footer.component';
-import { interval } from 'rxjs';
-import { fadeSlide } from '../../../shared/constants/animation';
+import { fadeInUpAnimation, slideLeftAnimation, slideRightAnimation, zoomInAnimation   } from '../../../shared/constants/animation';
+import { AnimationDirective } from '../../../shared/constants/animation.directive';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { loadavg } from 'os';
 
 @Component({
   selector: 'app-home',
-  imports: [HeaderComponent, CommonModule, FooterComponent],
+  imports: [HeaderComponent, CommonModule, FooterComponent,AnimationDirective,ScrollingModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
-  animations: [fadeSlide]
-})
+  animations: [fadeInUpAnimation, slideLeftAnimation, slideRightAnimation, zoomInAnimation]})
 
 export class HomeComponent implements OnInit {
+
+
+  isValueInView = false;
+
   images = ['/head.webp', '/head2.png'];
   currentImage = this.images[0];
   animationState: 'enter' | 'leave' = 'enter';
   private index = 0;
   interval: string | number | NodeJS.Timeout | undefined
-  constructor(@Inject(PLATFORM_ID) private platformId: object) { }
+  isBrowser:boolean
+
+  constructor(@Inject(PLATFORM_ID) private platformId: object, private el: ElementRef) { this.isBrowser = isPlatformBrowser(this.platformId); }
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
@@ -33,6 +40,21 @@ export class HomeComponent implements OnInit {
       }, 4000);
     }
   }
+  onImageLoad(event: Event) {
+    (event.target as HTMLImageElement).classList.add('opacity-100');
+  }
+
+  trackByFn(index: number, testimonial: any): number {
+    return index; // Or use testimonial.id if available
+  }
+
+  ngAfterViewInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+
+    }
+  }
+
+
 
   features = [
     {
@@ -66,34 +88,34 @@ export class HomeComponent implements OnInit {
       icon: "M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
     }
   ];
-   testimonials = [
+  testimonials = [
     {
       name: 'Shaaz',
       designation: 'CEO – Ique Cap, Bengaluru, India',
       message: 'CEO Square provides the right space for founders to connect and grow. The meaningful conversations and collaborations here have been invaluable for me and my company. It’s a must-have network for any entrepreneur...',
       initial: 'S',
-      image: '/shaaz.jpg' // Replace with actual image URL or leave null
+      image: 'https://www.ceosquare.in/shaaz.jpg'
     },
     {
       name: 'Shefin',
       designation: 'CEO – StudyinBengaluru, Bengaluru, India',
       message: 'CEO Square has been a game-changer for me. The mentorship and networking opportunities have helped refine my strategies and expand my connections. It’s a community that truly supports entrepreneurs...',
       initial: 'S',
-      image: '/shefin.JPG' // No image, so initials will be shown
+      image: 'https://www.ceosquare.in/shefin.JPG'
     },
     {
       name: 'Hashim',
       designation: 'CEO – Career Cafe, Bengaluru, India',
       message: 'Joining CEO Square gave me access to the right people and insights to scale my business. The support and collaboration within the community have made a huge difference. It’s a space where entrepreneurs truly help each other succeed...',
       initial: 'H',
-      image: '/hashim.jpg'
+      image: 'https://www.ceosquare.in/hashim.jpg'
     },
     {
       name: 'Indumathi Murthy',
       designation: 'CEO – Incube Nation , Bengaluru, India',
       message: 'CEO Square has been an incredible platform for meaningful connections and growth. Engaging with like-minded founders and industry experts has been a great experience. The support and mentorship here are truly empowering...',
       initial: 'I',
-      image: '/indu.jpg'
+      image: 'https://www.ceosquare.in/indu.jpg'
     }
   ];
 

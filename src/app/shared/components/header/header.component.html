@@ -24,7 +24,7 @@
       <div class="flex items-center sm:hidden">
         <button
           (click)="toggleMenu()"
-          class="inline-flex items-center justify-center p-2 rounded-md text-amber-300 hover:text-amber-300 hover:bg-amber-700 transition duration-300"
+          class="inline-flex items-center justify-center p-2 rounded-md text-[#C0C9C6] hover:text-[#C0C9C6] hover:bg-[#C0C9C6] transition duration-300"
         >
           <svg
             class="h-6 w-6"
@@ -47,13 +47,13 @@
   <!-- Mobile Menu Dropdown -->
   <div class="hidden sm:hidden" [ngClass]="{ hidden: !isMenuOpen }">
     <div
-      class="bg-gradient-to-r from-amber-500 to-amber-600 shadow-lg px-2 pt-2 pb-3"
+      class="bg-gradient-to-r from-[blue-900] to-blue-950 shadow-lg px-2 pt-2 pb-3"
     >
       <a
         *ngFor="let item of menuItems"
         [routerLink]="item.link"
         [routerLinkActiveOptions]="{ exact: true }"
-        routerLinkActive="text-gray-300 bg-gray-700 "
+        routerLinkActive="text-gray-900 bg-[#C0C9C6] "
         class="block text-gray-100 hover:text-gray-300 mt-2 hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium transition duration-300"
       >
         {{ item.name }}

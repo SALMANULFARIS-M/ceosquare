@@ -1,183 +1,181 @@
 <app-header></app-header>
 
 <!-- Home Section -->
-<div class="min-h-screen">
-  <!-- Hero Section -->
-  <div
-    class="relative bg-fixed overflow-hidden py-16 bg-cover bg-center bg-[#C0C9C6]"
-    style="background-image: url('/bg.webp')"
-  >
-    <!-- Overlay for uniform look -->
-    <div
-      class="absolute inset-0 bg-[#C0C9C6] opacity-70 backdrop-blur-md"
-    ></div>
+<!-- Hero Section -->
+<div
+  class="relative bg-fixed overflow-hidden py-16 bg-cover bg-center bg-[#C0C9C6]"
+  style="background-image: url('/bg.webp')"
+>
+  <!-- Overlay for uniform look -->
+  <div class="absolute inset-0 bg-[#C0C9C6] opacity-70 backdrop-blur-md"></div>
 
-    <!-- Optional: Additional shadow layer -->
-    <div class="absolute inset-0 bg-black/10 backdrop-blur-xs"></div>
+  <!-- Optional: Additional shadow layer -->
+  <div class="absolute inset-0 bg-black/10 backdrop-blur-xs"></div>
 
-    <div class="max-w-7xl mt-16 mx-auto relative z-10 px-6 lg:px-12">
-      <div class="grid lg:grid-cols-2 gap-8 items-center">
-        <!-- Text Content -->
-        <div class="text-center lg:text-left">
-          <h1
-            class="text-4xl sm:text-5xl md:text-6xl font-bold playfair-display text-black leading-14 drop-shadow-md"
+  <div class="max-w-7xl mt-16 mx-auto relative z-10 px-6 lg:px-12">
+    <div class="grid lg:grid-cols-2 gap-8 items-center">
+      <!-- Text Content -->
+      <div class="text-center lg:text-left animate-fade-slide">
+        <h1
+          class="text-4xl sm:text-5xl md:text-6xl font-bold playfair-display text-black leading-14 drop-shadow-md"
+        >
+          Transform Your <span class="text-blue-900">Leadership Journey</span>
+        </h1>
+        <p
+          class="mt-4 text-lg md:text-xl text-blue-950 open-sans leading-relaxed"
+        >
+          CEO Square connects visionary leaders with exclusive resources,
+          strategic partnerships, and transformative growth opportunities.
+        </p>
+        <div class="mt-8 flex justify-center lg:justify-start">
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSe1XFSYvmMQ9OxsLR2WqWMWpLmDjnC7MOV0TNQv97Y9_jUV3A/viewform?usp=header"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-900 to-blue-700 rounded-xl shadow-lg hover:scale-105 transition-all duration-300"
           >
-            Transform Your <span class="text-blue-900">Leadership Journey</span>
-          </h1>
-          <p
-            class="mt-4 text-lg md:text-xl text-blue-950 open-sans leading-relaxed"
-          >
-            CEO Square connects visionary leaders with exclusive resources,
-            strategic partnerships, and transformative growth opportunities.
-          </p>
-          <div class="mt-8 flex justify-center lg:justify-start">
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSe1XFSYvmMQ9OxsLR2WqWMWpLmDjnC7MOV0TNQv97Y9_jUV3A/viewform?usp=header"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-900 to-blue-700 rounded-xl shadow-lg hover:scale-105 transition-all duration-300"
+            Join Our Network
+            <svg
+              class="ml-3 h-6 w-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              Join Our Network
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Image Section -->
+      <div
+        class="relative flex items-center justify-center w-full max-w-lg h-auto animate-fade-slide-delay"
+      >
+        <img
+          [src]="currentImage"
+          class="w-full h-auto object-cover rounded-xl shadow-lg transition-transform duration-700 scale-100"
+          alt="Networking Image"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<section
+  class="text-center bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-md bg-fixed bg-center bg-cover relative"
+  style="background-image: url('/bg.webp')"
+>
+  <div class="absolute inset-0 bg-[#C0C9C6] opacity-70"></div>
+  <div class="relative" appAnimation="fadeInUp">
+    <!-- Logo -->
+    <div class="flex justify-center mb-4 sm:mb-6">
+      <img src="/logo-s.png" alt="CEO Square Logo" class="w-48" />
+    </div>
+
+    <!-- Heading -->
+    <h1
+      class="text-3xl sm:text-2xl font-semibold text-gray-800 playfair-display"
+    >
+      Welcome to <span class="text-blue-700 font-bold">CEO Square</span>
+    </h1>
+
+    <!-- Button -->
+    <button
+      class="mt-4 px-4 py-2 sm:px-6 sm:py-3 bg-black/15 text-black font-semibold italic rounded-md shadow-md hover:bg-gray-300 transition duration-300"
+    >
+      <span class="text-black playfair text-xl">Unlock Your Full</span>
+      <hr />
+      <span class="text-blue-700 italic montserrat">Leadership Potential</span>
+    </button>
+
+    <!-- Paragraph -->
+    <div class="mt-4 sm:mt-6 flex justify-center">
+      <p
+        class="w-full max-w-2xl md:max-w-5xl text-sm sm:text-base text-gray-600 italic merriweather-regular text-justify px-4"
+      >
+        At CEO Square, we’re building a global community where top CEOs,
+        entrepreneurs, and business leaders unite to shape the future of
+        business. Whether you're looking to expand your network, enhance your
+        leadership skills, or position your business for success, CEO Square has
+        the right tools, resources, and support for your journey.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Value Proposition Section -->
+<div
+  class="relative py-16 bg-fixed bg-center bg-cover border-t-2 border-gray-500 value-proposition-section"
+  style="background-image: url('/bg.webp')"
+>
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-[#C0C9C6] opacity-70"></div>
+
+  <div
+    class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+    appAnimation="fadeInUp"
+  >
+    <div class="text-center lg:text-center">
+      <h2
+        class="font-semibold poppins-semibold inline-block px-4 py-2 rounded-full text-gray-200 bg-blue-800 bg-opacity-10 text-sm tracking-wider uppercase mb-4"
+      >
+        Executive Advantage
+      </h2>
+      <p
+        class="mt-2 playfair-display text-3xl leading-8 font-extrabold tracking-tight text-black sm:text-4xl"
+      >
+        The CEO Square Difference
+      </p>
+      <p class="mt-4 max-w-2xl text-xl poppins-light text-gray-700 lg:mx-auto">
+        Elevate your leadership through collaborative excellence and strategic
+        innovation.
+      </p>
+    </div>
+
+    <!-- Feature Cards with Staggered Animation -->
+    <div class="mt-12" appAnimation="slideRight">
+      <dl class="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-x-8 md:gap-y-10">
+        <div
+          *ngFor="let feature of features"
+          class="relative bg-white/20 border border-white/30 p-6 rounded-lg shadow-md hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 ease-in-out backdrop-blur-lg mb-8 md:mb-0"
+        >
+          <dt class="flex items-start">
+            <div
+              class="flex items-center justify-center h-14 w-14 rounded-md bg-blue-900 text-white transition-all duration-300 ease-in-out hover:bg-gray-400 hover:text-blue-900 shadow-lg"
+            >
               <svg
-                class="ml-3 h-6 w-6"
-                xmlns="http://www.w3.org/2000/svg"
+                class="h-7 w-7"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
                 <path
+                  [attr.d]="feature.icon"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                />
+                ></path>
               </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Image Section -->
-        <div
-          class="relative flex items-center justify-center w-full max-w-lg h-auto"
-        >
-          <img
-            [@fadeSlide]="animationState"
-            [src]="currentImage"
-            class="w-full h-auto object-cover rounded-xl shadow-lg transition-transform duration-700 scale-100"
-            alt="Networking Image"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <section
-    class="text-center bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-md bg-fixed bg-center bg-cover relative"
-    style="background-image: url('/bg.webp')"
-  >
-    <div class="absolute inset-0 bg-[#C0C9C6] opacity-70"></div>
-    <div class="relative">
-      <div class="flex justify-center mb-4 sm:mb-6">
-        <img src="/logo-s.png" alt="CEO Square Logo" class="w-48" />
-      </div>
-      <h1
-        class="text-3xl sm:text-2xl font-semibold text-gray-800 playfair-display"
-      >
-        Welcome to <span class="text-blue-700 font-bold">CEO Square</span>
-      </h1>
-      <button
-        class="mt-4 px-4 py-2 sm:px-6 sm:py-3 bg-black/15 text-black font-semibold italic rounded-md shadow-md hover:bg-gray-300 transition duration-300"
-      >
-        <span class="text-black playfair text-xl">Unlock Your Full</span>
-        <hr />
-        <span class="text-blue-700 italic montserrat"
-          >Leadership Potential</span
-        >
-      </button>
-
-      <!-- Updated paragraph section -->
-      <div class="mt-4 sm:mt-6 flex justify-center">
-        <p
-          class="w-full max-w-2xl md:max-w-5xl text-sm sm:text-base text-gray-600 italic merriweather-regular text-justify px-4"
-        >
-          At CEO Square, we’re building a global community where top CEOs,
-          entrepreneurs, and business leaders unite to shape the future of
-          business. Whether you're looking to expand your network, enhance your
-          leadership skills, or position your business for success, CEO Square
-          has the right tools, resources, and support for your journey.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Value Proposition Section -->
-  <div
-    class="relative py-16 bg-fixed bg-center bg-cover border-t-2 border-gray-500"
-    style="background-image: url('/bg.webp')"
-  >
-    <!-- Overlay -->
-    <div class="absolute inset-0 bg-[#C0C9C6] opacity-70"></div>
-
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="lg:text-center">
-        <h2
-          class="font-semibold poppins-semibold inline-block px-4 py-2 rounded-full text-gray-200 bg-blue-800 bg-opacity-10 text-sm tracking-wider uppercase mb-4"
-        >
-          Executive Advantage
-        </h2>
-        <p
-          class="mt-2 playfair-display text-3xl leading-8 font-extrabold tracking-tight text-black sm:text-4xl"
-        >
-          The CEO Square Difference
-        </p>
-        <p
-          class="mt-4 max-w-2xl text-xl poppins-light text-gray-700 lg:mx-auto"
-        >
-          Elevate your leadership through collaborative excellence and strategic
-          innovation.
-        </p>
-      </div>
-
-      <div class="mt-12">
-        <dl
-          class="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-x-8 md:gap-y-10"
-        >
-          <div
-            *ngFor="let feature of features"
-            class="relative bg-white/20 border border-white/30 p-6 rounded-lg shadow-md hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 ease-in-out backdrop-blur-lg mb-8 md:mb-0"
-          >
-            <dt class="flex items-start">
-              <div
-                class="flex items-center justify-center h-14 w-14 rounded-md bg-blue-900 text-white transition-all duration-300 ease-in-out hover:bg-gray-400 hover:text-blue-900 shadow-lg"
-              >
-                <svg
-                  class="h-7 w-7"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    [attr.d]="feature.icon"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                  ></path>
-                </svg>
-              </div>
-              <p
-                class="ml-6 text-lg leading-6 font-semibold montserrat text-black transition-all duration-300"
-              >
-                {{ feature.title }}
-              </p>
-            </dt>
-            <dd
-              class="mt-3 text-base text-gray-700 text-justify merriweather-regular"
+            </div>
+            <p
+              class="ml-6 text-lg leading-6 font-semibold montserrat text-black transition-all duration-300"
             >
-              {{ feature.description }}
-            </dd>
-          </div>
-        </dl>
-      </div>
+              {{ feature.title }}
+            </p>
+          </dt>
+          <dd
+            class="mt-3 text-base text-gray-700 text-justify merriweather-regular"
+          >
+            {{ feature.description }}
+          </dd>
+        </div>
+      </dl>
     </div>
   </div>
 </div>
@@ -190,7 +188,10 @@
 >
   <div class="absolute inset-0 bg-[#C0C9C6] opacity-70"></div>
 
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div
+    class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+    appAnimation="fadeInUp"
+  >
     <div class="text-center">
       <span
         class="poppins-semibold inline-block px-4 py-2 rounded-full text-gray-200 bg-blue-900 bg-opacity-10 text-sm tracking-wider uppercase mb-4"
@@ -208,10 +209,14 @@
       </p>
     </div>
 
-    <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div
+      class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8"
+      appAnimation="slideLeft"
+    >
       <!-- Gold Membership -->
       <div
         class="bg-black/30 border-yellow-400 border backdrop-blur-xs rounded-xl shadow-2xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl h-full flex flex-col"
+        appAnimation="slideLeft"
       >
         <div
           class="px-6 py-8 bg-gradient-to-r from-black/5 to-black/50 backdrop-blur-md"
@@ -313,6 +318,7 @@
 
       <!-- Platinum Membership -->
       <div
+        appAnimation="fadeInUp"
         class="bg-black/30 border-2 border-gray-300 backdrop-blur-xs rounded-xl shadow-2xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl h-full flex flex-col relative"
       >
         <div
@@ -425,6 +431,7 @@
       <!-- Diamond Membership -->
       <div
         class="bg-black/30 backdrop-blur-xs rounded-xl shadow-2xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl ring-1 ring-amber-400 relative z-10 h-full flex flex-col"
+        appAnimation="slideRight"
       >
         <div
           class="absolute top-0 right-0 bg-red-500 text-white px-4 py-2 rounded-bl-xl poppins-semibold z-10"
@@ -546,7 +553,10 @@
 >
   <div class="absolute inset-0 bg-[#C0C9C6] opacity-70"></div>
 
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div
+    class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+    appAnimation="slideRight"
+  >
     <div class="text-center lg:text-center">
       <h2
         class="poppins-semibold inline-block px-4 py-2 rounded-full text-gray-200 bg-blue-900 bg-opacity-10 text-sm tracking-wider uppercase mb-4"
@@ -567,12 +577,18 @@
 
     <!-- Horizontal Scrolling Testimonials -->
     <div class="my-15 overflow-hidden relative">
-      <div class="flex my-auto gap-x-6 animate-testimonial-loop w-max">
+      <div
+        class="flex my-auto gap-x-6 animate-testimonial-loop w-max"
+        appAnimation="fadeInUp"
+      >
         <ng-container
-          *ngFor="let testimonial of testimonials.concat(testimonials)"
+          *ngFor="
+            let testimonial of testimonials.concat(testimonials);
+            trackBy: trackByFn
+          "
         >
           <div
-            class="bg-black/40 backdrop-blur-xs p-6 rounded-xl shadow-xl w-96 flex-shrink-0 border-2 border-blu-200 transition-transform transform hover:scale-105 "
+            class="bg-black/40 backdrop-blur-xs p-6 rounded-xl shadow-xl w-96 flex-shrink-0 border-2 border-blu-200 transition-transform transform hover:scale-105"
           >
             <div class="flex items-center mb-4">
               <!-- If Image Exists, Show Image; Else, Show Initial -->
@@ -584,6 +600,7 @@
                   [src]="testimonial.image"
                   alt="{{ testimonial.name }}"
                   class="h-full w-full object-cover"
+                  fetchpriority="high"
                 />
                 <span
                   *ngIf="!testimonial.image"
@@ -622,6 +639,7 @@
 
   <div
     class="relative max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8"
+    appAnimation="slideRight"
   >
     <h2 class="text-3xl montserrat text-blue-900 sm:text-4xl">
       <span class="block">Ready to Unlock Your Leadership Potential?</span>
