@@ -18,12 +18,10 @@ export class AnimationDirective implements AfterViewInit {
 
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
-      console.log(`👀 Observing element:`, this.el.nativeElement);
 
       this.observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            console.log(`✅ Element is visible, triggering animation: ${this.animationType}`);
             this.triggerAnimation();
             this.observer.unobserve(this.el.nativeElement);
           }

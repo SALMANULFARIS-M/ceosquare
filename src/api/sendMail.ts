@@ -2,10 +2,11 @@ import { VercelRequest, VercelResponse } from '@vercel/node';
 import nodemailer from 'nodemailer';
 import 'dotenv/config';
 
-const emailUser = process.env['EMAIL_USER'] as string;
-const emailPass = process.env['EMAIL_PASS'] as string;
+const emailUser = 'ceo@ceosquare.in';
+const emailPass = 'xwaidbcodktqgygx';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
+
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method not allowed' });
     }

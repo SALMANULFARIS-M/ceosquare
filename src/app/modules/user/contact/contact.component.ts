@@ -29,13 +29,14 @@ export class ContactComponent {
     if (this.contactForm.valid) {
       this.isLoading = true; // Loader state
 
-      fetch('/api/send-email', {
+      fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(this.contactForm.value),
       })
         .then(response => response.json())
         .then(data => {
+
           if (data.success) {
             this.isLoading = false; // Loader state
             this.toastr.success('Message sent successfully!', 'Success');
