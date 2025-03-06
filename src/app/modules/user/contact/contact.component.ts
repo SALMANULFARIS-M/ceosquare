@@ -42,10 +42,12 @@ export class ContactComponent {
             this.toastr.success('Message sent successfully!', 'Success');
             this.contactForm.reset();
           } else {
+            this.isLoading = false;
             this.toastr.error('Error sending message.', 'Error');
           }
         })
         .catch(() => {
+          this.isLoading = false;
           this.toastr.error('Error sending message.', 'Error');
         });
     } else {
