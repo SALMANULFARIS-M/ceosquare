@@ -24,7 +24,6 @@ app.use(cors()); // Enable CORS
 
 app.all('/api/contact', async (req, res) => { // Define your API endpoint
 
-  console.log('Received a request at /api/contact');
   const { name, email, message } = req.body;
 
   // Configure Nodemailer Transporter (Get credentials from environment variables)
