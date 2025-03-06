@@ -1,2 +1,32 @@
 
 <router-outlet />
+<!-- WhatsApp Floating Button - Fixed to bottom right -->
+<a
+  href="https://wa.me/9071013449"
+  target="_blank"
+  class="fixed z-50 bottom-24 right-4 md:right-7 border-2 border-white w-12 h-12 rounded-full drop-shadow-md bg-green-600 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-700 text-white text-3xl flex items-center justify-center transition-transform duration-300 hover:scale-110"
+  title="Chat on WhatsApp"
+>
+  <i class='bx bxl-whatsapp'></i>
+  <!-- Subtle ping animation to draw attention -->
+  <span class="absolute w-full h-full rounded-full bg-green-400 opacity-20 animate-ping"></span>
+</a>
+
+<!-- Go To Top Button - Appears on Scroll -->
+<button
+  id="to-top-button"
+  (click)="goToTop()"
+  title="Go To Top"
+  class="hidden fixed z-50 bottom-8 right-4 md:right-8 w-10 h-10 rounded-md drop-shadow-md
+         bg-gradient-to-r from-blue-800 via-indigo-800 to-blue-800 hover:bg-gradient-to-br
+         focus:ring-4 focus:outline-none focus:ring-yellow-800 border-2 border-yellow-800
+         text-white text-xl font-bold transform transition-transform duration-300 hover:scale-110"
+>
+  <i class='bx bxs-chevrons-up'></i>
+
+  <!-- ✅ Improved Pulsing Effect -->
+  <span
+    class="absolute inset-0 w-full h-full rounded-md bg-blue-500 opacity-30
+           animate-[ping_1.5s_ease-out_infinite]"
+  ></span>
+</button>

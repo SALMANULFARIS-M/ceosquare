@@ -28,7 +28,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
   };
 
-
     try {
         await transporter.sendMail(mailOptions);
         return res.status(200).json({ success: true, message: 'Email sent successfully!' });
