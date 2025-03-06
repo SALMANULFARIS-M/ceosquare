@@ -2,8 +2,8 @@ import { VercelRequest, VercelResponse } from '@vercel/node';
 import nodemailer from 'nodemailer';
 import 'dotenv/config';
 
-const emailUser = 'ceo@ceosquare.in';
-const emailPass = 'xwaidbcodktqgygx';
+const emailUser = process.env['EMAIL_USER'] as string;
+const emailPass = process.env['EMAIL_PASS'] as string;
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
 
