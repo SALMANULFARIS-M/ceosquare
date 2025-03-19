@@ -131,8 +131,8 @@
 <!-- Value Proposition Section -->
 <section class="relative h-screen overflow-hidden border-t-2 border-gray-500 bg-cover bg-center bg-fixed" style="background-image: url('/bg-image.jpeg');">
   <!-- Fixed background with optimized overlay -->
-  <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70 backdrop-blur-[2px] "></div>
-  <div class="relative h-full flex flex-col z-10"> <!-- ✅ Added z-10 to ensure visibility -->
+  <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70 backdrop-blur-[2px]"></div>
+  <div class="relative h-full flex flex-col z-10">
     <!-- Header content -->
     <div class="flex-none pt-16 pb-8">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -152,13 +152,13 @@
       </div>
     </div>
     <!-- Scrollable feature cards -->
-    <div class="flex-grow overflow-hidden px-4 sm:px-6 lg:px-8 pb-16">
+    <div class="flex-grow overflow-hidden px-6 lg:px-8">
       <div class="h-full overflow-y-auto scrollbar-hide will-change-scroll z-10" style="scroll-behavior: smooth; -webkit-overflow-scrolling: touch;">
-        <div class="max-w-7xl mx-auto space-y-12 pb-12">
+        <div class="max-w-7xl mx-auto pb-12">
           <!-- Feature cards here -->
           <div
             *ngFor="let feature of features; let i = index"
-            class="flex flex-col md:flex-row items-center md:items-start md:justify-between gap-8"
+            class="flex flex-col md:flex-row items-center md:items-start md:justify-between gap-8 mb-2"
             [ngClass]="{ 'md:flex-row-reverse': i % 2 !== 0 }"
           >
             <!-- Feature Card -->
@@ -175,9 +175,6 @@
             </div>
             <div class="w-full md:w-1/2 text-white poppins-regular text-lg text-justify hidden md:block"></div>
           </div>
-
-          <!-- Extra padding div at the end -->
-          <div class="h-12 md:h-24"></div>
         </div>
       </div>
     </div>
@@ -662,7 +659,7 @@
       target="_blank"
       rel="noopener noreferrer"
       href="https://docs.google.com/forms/d/e/1FAIpQLSe1XFSYvmMQ9OxsLR2WqWMWpLmDjnC7MOV0TNQv97Y9_jUV3A/viewform?usp=header"
-      class="mt-8 w-full inline-flex items-center justify-center px-5 py-3 border text-base font-medium rounded-md text-white border-gray-400 bg-black/20 transition-transform duration-300 hover:scale-105 sm:w-auto"
+      class="mt-8  md:w-auto inline-flex items-center justify-center px-5 py-3 border text-base font-medium rounded-md text-white border-gray-400 bg-black/20 transition-transform duration-300 hover:scale-105 "
     >
       Join Today
     </a>

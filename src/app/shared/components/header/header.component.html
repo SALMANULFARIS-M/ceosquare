@@ -13,8 +13,8 @@
           *ngFor="let item of menuItems"
           [routerLink]="item.link"
           [routerLinkActiveOptions]="{ exact: true }"
-          routerLinkActive="active-class"
-          class="mr-8 border-transparent text-gray-100 hover:text-gray-300 hover:border-gray-300 font-medium text-sm leading-5 pt-6 pb-2 transition duration-300"
+          [routerLinkActive]="!item.redirectType ? 'active' : ''"
+          class="mr-8 border-transparent text-gray-100 hover:text-gray-300 hover:border-gray-300 font-medium text-sm montserrat leading-5 pt-6 pb-2 transition duration-300"
         >
           {{ item.name }}
         </a>
@@ -47,14 +47,14 @@
   <!-- Mobile Menu Dropdown -->
   <div class="hidden sm:hidden" [ngClass]="{ hidden: !isMenuOpen }">
     <div
-      class="bg-gradient-to-r from-[blue-900] to-blue-950 shadow-lg px-2 pt-2 pb-3"
+      class="bg-gradient-to-r from-black/30 to-yellow-400/40 shadow-lg backdrop-blur-3xl px-2 pt-2 pb-3"
     >
       <a
         *ngFor="let item of menuItems"
         [routerLink]="item.link"
         [routerLinkActiveOptions]="{ exact: true }"
-        routerLinkActive="text-gray-900 bg-[#C0C9C6] "
-        class="block text-gray-100 hover:text-gray-300 mt-2 hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium transition duration-300"
+        [routerLinkActive]="!item.redirectType ? 'active' : ''"
+        class="block text-gray-100 hover:text-black mt-2 montserrat hover:bg-amber-300 px-3 py-2 rounded-md text-base font-medium transition duration-300"
       >
         {{ item.name }}
       </a>
@@ -62,24 +62,4 @@
     </div>
   </div>
 </nav>
-  <!-- Navbar -->
-  <nav class="relative z-10 bg-black/30 backdrop-blur-md border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="flex justify-between items-center py-4">
-        <div class="flex items-center">
-          <span class="text-white playfair-display text-2xl font-bold">CEO<span class="gold-gradient text-transparent bg-clip-text">Square</span></span>
-        </div>
-        <div class="hidden md:flex space-x-8 poppins-regular">
-          <a href="#" class="text-gray-300 hover:text-white transition-colors">About</a>
-          <a href="#" class="text-gray-300 hover:text-white transition-colors">Services</a>
-          <a href="#" class="text-gray-300 hover:text-white transition-colors">Case Studies</a>
-          <a href="#" class="text-gray-300 hover:text-white transition-colors">Contact</a>
-        </div>
-        <div>
-          <button class="poppins-semibold px-6 py-2 rounded-full bg-gradient-to-r from-blue-800 to-blue-600 text-white hover:from-blue-700 hover:to-blue-500 transition-all shadow-lg hover:shadow-blue-500/30">
-            Join Now
-          </button>
-        </div>
-      </div>
-    </div>
-  </nav>
+

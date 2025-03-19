@@ -15,14 +15,14 @@ export class HeaderComponent implements OnInit {
   }
   isMenuOpen = false;
   menuItems = [
-    { name: 'Home', link: '/' },
-    { name: 'About', link: '/about' },
-    { name: 'Membership', link: '/membership' },
-    { name: 'Magazine', link: '/membership' },   // Redirect to Membership
-    { name: 'Podcast', link: '/membership' },    // Redirect to Membership
-    { name: 'Course', link: '/membership' },
-    { name: 'Store', link: '/store' },
-    { name: 'Contact', link: '/contact' }
+    { name: 'Home', link: '/', redirectType: false },
+    { name: 'About', link: '/about', redirectType: false },
+    { name: 'Membership', link: '/membership', redirectType: false },
+    { name: 'Magazine', link: '/membership', redirectType: true },   // Redirect to Membership
+    { name: 'Podcast', link: '/membership', redirectType: true },    // Redirect to Membership
+    { name: 'Course', link: '/membership', redirectType: true },
+    { name: 'Store', link: '/store', redirectType: false },
+    { name: 'Contact', link: '/contact', redirectType: false }
   ];
 
 
