@@ -17,15 +17,14 @@ export class HeaderComponent implements OnInit {
   menuItems = [
     { name: 'Home', link: '/' },
     { name: 'About', link: '/about' },
-    { name: 'Membership', link: '/membership'},
-    { name: 'Contact', link: '/contact' },
-    { name: 'Magazine', link: '/contact' },
-    { name: 'Podcast', link: '/contact' },
-    { name: 'Store', link: '/contact' },
-    { name: 'course', link: '/contact' }
-
-
+    { name: 'Membership', link: '/membership' },
+    { name: 'Magazine', link: '/membership' },   // Redirect to Membership
+    { name: 'Podcast', link: '/membership' },    // Redirect to Membership
+    { name: 'Course', link: '/membership' },
+    { name: 'Store', link: '/store' },
+    { name: 'Contact', link: '/contact' }
   ];
+
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;

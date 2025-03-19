@@ -23,7 +23,8 @@
       <h1
         class="text-4xl sm:text-5xl md:text-6xl font-bold playfair-display text-white leading-[1.2] drop-shadow-md"
       >
-        Transform Your <span class="gold-gradient-text">Leadership Journey</span>
+        Transform Your
+        <span class="gold-gradient-text">Leadership Journey</span>
       </h1>
       <p
         class="mt-6 text-lg md:text-xl text-blue-100 open-sans leading-relaxed"
@@ -36,7 +37,7 @@
           href="https://docs.google.com/forms/d/e/1FAIpQLSe1XFSYvmMQ9OxsLR2WqWMWpLmDjnC7MOV0TNQv97Y9_jUV3A/viewform?usp=header"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center px-8 py-4 text-lg font-semibold text-black gold-gradient  rounded-xl shadow-lg hover:scale-105 transition-all duration-300"
+          class="flex items-center px-8 py-4 text-lg font-semibold text-black gold-gradient rounded-xl shadow-lg hover:scale-105 transition-all duration-300"
         >
           Join Our Network
           <svg
@@ -58,8 +59,10 @@
     </div>
 
     <!-- Diagonal Image Right Side -->
-    <div class="w-full lg:w-1/2 relative h-[80vh] animate-fade-slide-delay hidden md:block">
-      <div class="absolute inset-0 clip-diagonal-right ">
+    <div
+      class="w-full lg:w-1/2 relative h-[80vh] animate-fade-slide-delay hidden md:block"
+    >
+      <div class="absolute inset-0 clip-diagonal-right">
         <img
           src="/hero.avif"
           alt="Networking"
@@ -69,7 +72,6 @@
     </div>
   </div>
 </div>
-
 <!-- Welcome to ceosquare -->
 <section class="relative text-center bg-black">
   <div
@@ -95,7 +97,7 @@
       <h1
         class="text-3xl sm:text-2xl font-semibold text-white playfair-display"
       >
-        Welcome to <span class=" font-bold gold-gradient-text">CEO Square</span>
+        Welcome to <span class="font-bold gold-gradient-text">CEO Square</span>
       </h1>
 
       <!-- Button -->
@@ -125,99 +127,64 @@
   </div>
 </section>
 
+
 <!-- Value Proposition Section -->
-<section
-  class="relative h-screen bg-fixed bg-center bg-cover border-t-2 bg-white border-gray-500"
-  style="background-image: url('/bg-image.jpeg')"
->
-  <div
-    class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70 backdrop-blur-sm"
-    aria-hidden="true"
-  ></div>
-
-  <!-- Fixed Background Section -->
-  <div
-    class="fixed inset-0 w-full h-full bg-cover bg-center"
-    style="background-image: url('/bg-image.jpeg'); z-index: -1"
-  ></div>
-
-  <!-- Scrolling Content Container -->
-  <div class="relative h-full overflow-y-auto scrollbar-hide">
-    <!-- Added scrollbar-hide class -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div class="text-center">
-        <div
-          class="max-w-2xl py-5 backdrop-blur-md mx-auto rounded-md shadow-2xl"
-        >
-          <h2
-            class="font-semibold poppins-semibold inline-block px-4 py-2 rounded-md text-black gold-gradient bg-opacity-10 text-sm tracking-wider uppercase mb-4"
-          >
-            Executive Advantage
-          </h2>
-          <p
-            class="mt-2 playfair-display text-3xl md:text-4xl leading-8 font-extrabold tracking-tight text-black"
-          >
-            The CEO Square Difference
-          </p>
-          <p class="mt-4 text-xl poppins-light gold-gradient-text">
-            Elevate your leadership through collaborative excellence and
-            strategic innovation.
-          </p>
-        </div>
-      </div>
-
-      <!-- Alternating Feature Cards -->
-      <div class="mt-12 space-y-12">
-        <div
-          *ngFor="let feature of features; let i = index"
-          class="flex flex-col md:flex-row items-center md:items-start md:justify-between gap-8"
-          [ngClass]="{ 'md:flex-row-reverse': i % 2 !== 0 }"
-        >
-          <!-- Feature Card -->
-          <div
-            class="flex-shrink-0 bg-gradient-to-br from-black/80 to-black/60 backdrop-blur-2xl border p-8 rounded-xl shadow-xl border-white/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 w-full md:w-1/2 flex flex-col items-center text-center"
-          >
-            <!-- Centered Icon -->
-            <div
-              class="flex items-center justify-center h-14 w-14 rounded-full gold-gradient text-black mb-4"
-            >
-              <svg
-                class="h-7 w-7"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  [attr.d]="feature.icon"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                ></path>
-              </svg>
-            </div>
-
-            <!-- Centered Title -->
-            <h3 class="text-xl font-semibold montserrat text-white mb-4">
-              {{ feature.title }}
-            </h3>
-
-            <!-- Centered Description -->
-            <p class="text-gray-200 text-justify merriweather-regular">
-              {{ feature.description }}
+<section class="relative h-screen overflow-hidden border-t-2 border-gray-500 bg-cover bg-center bg-fixed" style="background-image: url('/bg-image.jpeg');">
+  <!-- Fixed background with optimized overlay -->
+  <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70 backdrop-blur-[2px] "></div>
+  <div class="relative h-full flex flex-col z-10"> <!-- ✅ Added z-10 to ensure visibility -->
+    <!-- Header content -->
+    <div class="flex-none pt-16 pb-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <div class="max-w-2xl py-5 backdrop-blur mx-auto rounded-md shadow-2xl">
+            <h2 class="font-semibold poppins-semibold inline-block px-4 py-2 rounded-md text-black gold-gradient bg-opacity-10 text-sm tracking-wider uppercase mb-4">
+              Executive Advantage
+            </h2>
+            <p class="mt-2 playfair-display text-3xl md:text-4xl leading-8 font-extrabold tracking-tight text-black">
+              The CEO Square Difference
+            </p>
+            <p class="mt-4 text-xl poppins-light gold-gradient-text">
+              Elevate your leadership through collaborative excellence and strategic innovation.
             </p>
           </div>
-
-          <!-- Optional Side Content -->
+        </div>
+      </div>
+    </div>
+    <!-- Scrollable feature cards -->
+    <div class="flex-grow overflow-hidden px-4 sm:px-6 lg:px-8 pb-16">
+      <div class="h-full overflow-y-auto scrollbar-hide will-change-scroll z-10" style="scroll-behavior: smooth; -webkit-overflow-scrolling: touch;">
+        <div class="max-w-7xl mx-auto space-y-12 pb-12">
+          <!-- Feature cards here -->
           <div
-            class="w-full md:w-1/2 text-white poppins-regular text-lg text-justify hidden md:block"
+            *ngFor="let feature of features; let i = index"
+            class="flex flex-col md:flex-row items-center md:items-start md:justify-between gap-8"
+            [ngClass]="{ 'md:flex-row-reverse': i % 2 !== 0 }"
           >
-            <p><!-- Optional supporting text or image here --></p>
+            <!-- Feature Card -->
+            <div class="flex-shrink-0 bg-gradient-to-br from-black/80 to-black/60 backdrop-blur-md border p-8 rounded-xl shadow-xl border-white/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 w-full md:w-1/2 flex flex-col items-center text-center transform-gpu">
+              <div class="flex items-center justify-center h-14 w-14 rounded-full gold-gradient text-black mb-4">
+                <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path [attr.d]="feature.icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold montserrat text-white mb-4">{{ feature.title }}</h3>
+              <p class="text-gray-200 text-justify merriweather-regular">
+                {{ feature.description }}
+              </p>
+            </div>
+            <div class="w-full md:w-1/2 text-white poppins-regular text-lg text-justify hidden md:block"></div>
           </div>
+
+          <!-- Extra padding div at the end -->
+          <div class="h-12 md:h-24"></div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+
 
 <!-- Membership Plans -->
 <div
@@ -587,7 +554,7 @@
   class="py-12 relative border-t-2 border-gray-500 bg-fixed bg-white bg-center bg-cover overflow-hidden"
   style="background-image: url('/bg-image.jpeg')"
 >
-<div
+  <div
     class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70 backdrop-blur-sm"
     aria-hidden="true"
   ></div>
