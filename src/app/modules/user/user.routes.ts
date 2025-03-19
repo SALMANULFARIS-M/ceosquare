@@ -14,5 +14,4 @@ export const USER_ROUTES: Routes = [
   { path: 'membership', component: MembershipComponent },
   { path: 'terms-of-service', component: PrivacyComponent },
   { path: 'privacy-policy', component: PrivacyComponent },
-
 ];
