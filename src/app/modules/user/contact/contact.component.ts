@@ -4,6 +4,7 @@ import { FooterComponent } from '../../../shared/components/footer/footer.compon
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
+import { ContactService } from '../../../core/services/contact.service';
 
 @Component({
   selector: 'app-contact',
@@ -15,7 +16,7 @@ export class ContactComponent {
   contactForm: FormGroup;
   isLoading = false; // Loader state
 
-  constructor(private fb: FormBuilder, private toastr: ToastrService) {
+  constructor(private fb: FormBuilder, private toastr: ToastrService, private service: ContactService) {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -28,32 +29,22 @@ export class ContactComponent {
   onSubmit() {
     if (this.contactForm.valid) {
       this.isLoading = true; // Loader state
+      const data = this.contactForm.value; // Get the form values
 
-      fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(this.contactForm.value),
-      })
-        .then(response => response.json())
-        .then(data => {
-
-          if (data.success) {
-            this.isLoading = false; // Loader state
-            this.toastr.success('Message sent successfully!', 'Success');
-            this.contactForm.reset();
-          } else {
-            this.isLoading = false;
-            this.toastr.error('Error sending message.', 'Error');
-          }
-        })
-        .catch(() => {
-          this.isLoading = false;
-          this.toastr.error('Error sending message.', 'Error');
-        });
+      this.service.sendContactForm(data).subscribe({
+        next: (response) => {
+          this.isLoading = false; // Reset loader state
+        },
+        error: (error) => {
+          this.isLoading = false; // Reset loader state
+          this.toastr.error('Failed to send email. Please try again.', 'Error');
+        }
+      });
     } else {
       this.contactForm.markAllAsTouched();
       this.toastr.warning('Please fill out the form correctly.', 'Validation Error');
     }
   }
 }
+
 

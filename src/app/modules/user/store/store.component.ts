@@ -3,6 +3,8 @@ import { HeaderComponent } from '../../../shared/components/header/header.compon
 import { FooterComponent } from '../../../shared/components/footer/footer.component';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ToastrService } from 'ngx-toastr';
+import { ContactService } from '../../../core/services/contact.service';
 
 @Component({
   selector: 'app-store',
@@ -17,6 +19,7 @@ export class StoreComponent {
   selectedProduct = '';
   orderForm: FormGroup;
   activeProduct: string | null = null;
+  isSubmitting = false;
   products = [
     {
       name: 'CEO Square Polo Neck T-Shirt',
@@ -63,13 +66,11 @@ export class StoreComponent {
 
 
 
-
-
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private toastr: ToastrService, private service: ContactService) {
     this.orderForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      phone: ['', Validators.required],
+      phone: ['', Validators.required,, Validators.pattern(/^[6-9]\d{9}$/)],
       address: ['', Validators.required]
     });
   }
@@ -90,15 +91,29 @@ export class StoreComponent {
   }
 
   submitOrder() {
-    if (this.orderForm.valid) {
-      const orderData = {
-        ...this.orderForm.value,
-        product: this.selectedProduct
-      };
-      // this.http.post('/api/send-order', orderData).subscribe(() => {
-      //   alert('Order Submitted! We will contact you soon.');
-      //   this.closeModal();
-      // });
+    if (this.orderForm.invalid) {
+      this.orderForm.markAllAsTouched();
+      this.toastr.warning('Please fill all the fields correctly!', 'Validation Error');
+      return;
     }
+
+    this.isSubmitting = true;
+    const orderData = {
+      ...this.orderForm.value,
+      product: this.selectedProduct
+    };
+
+    // Example POST (uncomment your actual endpoint)
+    this.service.purchase(orderData).subscribe({
+      next: () => {
+        this.toastr.success('Order Submitted! We will contact you soon.', 'Success');
+        this.closeModal();
+        this.isSubmitting = false;
+      },
+      error: () => {
+        this.toastr.error('Failed to submit order. Please try again.', 'Error');
+        this.isSubmitting = false;
+      }
+    });
   }
 }

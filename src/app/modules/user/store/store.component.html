@@ -134,54 +134,37 @@
       Buy {{ selectedProduct }}
     </h3>
 
-    <form (ngSubmit)="submitOrder()" [formGroup]="orderForm" class="space-y-4">
-      <div class="relative">
-        <input
-          formControlName="name"
-          type="text"
-          placeholder="Your Name"
-          class="w-full bg-gray-800 border border-gray-700 p-3 rounded-lg text-white focus:border-amber-400 focus:outline-none"
-          required
-        />
+    <form (ngSubmit)="submitOrder()" [formGroup]="orderForm" >
+      <div class="relative mb-4">
+        <input formControlName="name" type="text" placeholder="Your Name"
+          [ngClass]="{'border-red-500': orderForm.get('name')?.invalid && orderForm.get('name')?.touched}"
+          class="w-full bg-gray-800 border border-gray-700 p-3 rounded-lg text-white focus:border-amber-400 focus:outline-none" required />
       </div>
 
-      <div class="relative">
-        <input
-          formControlName="email"
-          type="email"
-          placeholder="Email"
-          class="w-full bg-gray-800 border border-gray-700 p-3 rounded-lg text-white focus:border-amber-400 focus:outline-none"
-          required
-        />
+      <div class="relative mb-4">
+        <input formControlName="email" type="email" placeholder="Email"
+          [ngClass]="{'border-red-500': orderForm.get('email')?.invalid && orderForm.get('email')?.touched}"
+          class="w-full bg-gray-800 border border-gray-700 p-3 rounded-lg text-white focus:border-amber-400 focus:outline-none" required />
       </div>
 
-      <div class="relative">
-        <input
-          formControlName="phone"
-          type="tel"
-          placeholder="Phone Number"
-          class="w-full bg-gray-800 border border-gray-700 p-3 rounded-lg text-white focus:border-amber-400 focus:outline-none"
-          required
-        />
+      <div class="relative mb-4">
+        <input formControlName="phone" type="tel" placeholder="Phone Number"
+          [ngClass]="{'border-red-500': orderForm.get('phone')?.invalid && orderForm.get('phone')?.touched}"
+          class="w-full bg-gray-800 border border-gray-700 p-3 rounded-lg text-white focus:border-amber-400 focus:outline-none" required />
       </div>
 
-      <div class="relative">
-        <textarea
-          formControlName="address"
-          placeholder="Shipping Address"
-          rows="3"
-          class="w-full bg-gray-800 border border-gray-700 p-3 rounded-lg text-white focus:border-amber-400 focus:outline-none"
-          required
-        ></textarea>
+      <div class="relative mb-4">
+        <textarea formControlName="address" placeholder="Shipping Address" rows="3"
+          [ngClass]="{'border-red-500': orderForm.get('address')?.invalid && orderForm.get('address')?.touched}"
+          class="w-full bg-gray-800 border border-gray-700 p-3 rounded-lg text-white focus:border-amber-400 focus:outline-none" required></textarea>
       </div>
 
-      <button
-        type="submit"
-        class="w-full gold-gradient text-black py-3 rounded-lg hover:brightness-110 transition-all font-medium mt-6"
-      >
-        Confirm Order
+      <button type="submit mb-4" [disabled]="isSubmitting"
+        class="w-full gold-gradient text-black py-3 rounded-lg hover:brightness-110 transition-all font-medium mt-6">
+        {{ isSubmitting ? 'Submitting...' : 'Confirm Order' }}
       </button>
     </form>
+
 
     <p class="text-gray-400 text-xs text-center mt-6 poppins-light">
       Exclusive CEO Square Merchandise - Premium Quality Guaranteed
