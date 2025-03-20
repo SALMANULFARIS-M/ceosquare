@@ -33,6 +33,7 @@ export class ContactComponent {
 
       this.service.sendContactForm(data).subscribe({
         next: (response) => {
+          this.toastr.success('Submitted! We will contact you soon.', 'Success');
           this.isLoading = false; // Reset loader state
         },
         error: (error) => {

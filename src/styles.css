@@ -297,3 +297,95 @@ body {
   font-weight: 900;
   font-style: italic;
 }
+
+
+
+
+@keyframes blob-top {
+  0%, 50% {
+    top: 0%;
+    left: 50%;
+  }
+  75%, 100% {
+    top: 50%;
+    left: 0%;
+  }
+}
+
+@keyframes blob-bottom {
+  0% {
+    top: 100%;
+    left: 50%;
+  }
+  25%, 50%, 75% {
+    top: 50%;
+    left: 100%;
+  }
+  100% {
+    top: 0%;
+    left: 50%;
+  }
+}
+
+@keyframes blob-left {
+  0% {
+    top: 50%;
+    left: 0%;
+  }
+  25% {
+    top: 50%;
+    left: 0%;
+  }
+  50%, 100% {
+    top: 100%;
+    left: 50%;
+  }
+}
+
+@keyframes blob-move {
+  0%, 100% {
+    top: 0%;
+    left: 50%;
+  }
+  25% {
+    top: 50%;
+    left: 100%;
+  }
+  50% {
+    top: 100%;
+    left: 50%;
+  }
+  75% {
+    top: 50%;
+    left: 0%;
+  }
+}
+
+/* Animation classes */
+.animate-blob-top {
+  animation: blob-top 2s infinite ease-in-out;
+}
+
+.animate-blob-bottom {
+  animation: blob-bottom 2s infinite ease-in-out;
+}
+
+.animate-blob-left {
+  animation: blob-left 2s infinite ease-in-out;
+}
+
+.animate-blob-move {
+  animation: blob-move 2s infinite ease-in-out;
+}
+@keyframes rotate-logo {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-logo {
+  animation: rotate-logo 2s linear infinite;
+}

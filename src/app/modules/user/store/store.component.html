@@ -171,5 +171,19 @@
     </p>
   </div>
 </div>
+<!-- Spinner Overlay -->
+<div *ngIf="isSubmitting" class="fixed inset-0 bg-black/80 bg-opacity-80 flex items-center justify-center z-50">
+  <div class="relative w-32 h-32">
+    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-6 h-6 border-2 border-yellow-500 rounded-full animate-blob-top"></div>
+    <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-6 h-6 border-2 border-yellow-500 rounded-full animate-blob-bottom"></div>
+    <div class="absolute left-0 top-1/2 transform -translate-y-1/2 w-6 h-6 border-2 border-yellow-500 rounded-full animate-blob-left"></div>
 
+    <div class="absolute w-6 h-6 gold-gradient rounded-full animate-blob-move"></div>
+
+    <!-- Logo in center -->
+    <div class="absolute inset-0 flex items-center justify-center">
+      <img src="/favicon.png" alt="Logo" class="w-12 h-12 rotate-logo">
+    </div>
+  </div>
+</div>
 <app-footer></app-footer>
