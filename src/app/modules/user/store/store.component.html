@@ -14,17 +14,14 @@
     class="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8 text-center"
   >
     <h1
-      class="text-4xl sm:text-5xl lg:text-6xl playfair flex items-center justify-center text-white tracking-tight"
+      class="text-4xl lg:text-5xl playfair flex items-center justify-center text-white tracking-tight"
     >
       The CEO Store
     </h1>
     <p
       class="mt-6 max-w-3xl mx-auto text-xl text-indigo-100 poppins-light text-justify md:text-center"
     >
-      Discover our exclusive collection designed for leaders and changemakers.
-      From premium mugs to statement t-shirts, each product reflects the spirit
-      of ambition, leadership, and innovation. Own a piece of the CEO Square
-      identity and elevate your everyday essentials.
+    Explore our exclusive collection for leaders — premium mugs, statement t-shirts, and essentials that reflect ambition, leadership, and innovation.
     </p>
   </div>
 </div>
@@ -41,38 +38,60 @@
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-    <div *ngFor="let product of products"
-         class="relative border border-gray-800 rounded-lg shadow-xl p-6 bg-gray-900 group transition-all duration-500 hover:border-gold">
-
+    <div
+      *ngFor="let product of products"
+      class="relative border border-gray-800 rounded-lg shadow-xl p-6 bg-gray-900 group transition-all duration-500 hover:border-gold"
+    >
       <div class="absolute top-0 left-0 right-0 h-1 gold-gradient"></div>
 
       <!-- Default View -->
       <div class="h-56 flex items-center justify-center mb-4">
-        <img src="{{ product.image }}" alt="{{ product.name }}"
-          class="max-h-full object-contain mx-auto transition-transform duration-500 group-hover:scale-105" />
+        <img
+          src="{{ product.image }}"
+          alt="{{ product.name }}"
+          class="max-h-full object-contain mx-auto transition-transform duration-500 group-hover:scale-105"
+        />
       </div>
 
-      <h3 class="text-xl font-semibold text-center mb-2 text-white">{{ product.name }}</h3>
-      <p class="text-xl font-bold text-center mb-4 gold-gradient-text">{{ product.price }}</p>
+      <h3 class="text-xl font-semibold text-center mb-2 text-white">
+        {{ product.name }}
+      </h3>
+      <p class="text-xl font-bold text-center mb-4 gold-gradient-text">
+        {{ product.price }}
+      </p>
 
-      <div class="text-center">
-        <button (click)="openModal(product.productKey)"
-          class="gold-gradient text-black py-2 px-4 rounded-lg hover:brightness-110 transition-all font-medium">
+      <div class="text-center relative z-10">
+        <button
+          (click)="openModal(product.productKey)"
+          class="gold-gradient text-black py-2 px-4 rounded-lg hover:brightness-110 transition-all font-medium"
+        >
           Buy Now
         </button>
-        <!-- Mobile: Toggle Details Button -->
-        <button class="block md:hidden text-sm text-yellow-400 mt-2" (click)="toggleProductDetails(product.productKey)">
-          {{ activeProduct === product.productKey ? 'Hide Details' : 'View Details' }}
+      </div>
+      <div class="block md:hidden text-center relative z-10">
+        <!-- Mobile: Toggle Details -->
+
+        <button
+          class=" text-sm text-yellow-400 mt-2"
+          (click)="toggleProductDetails(product.productKey)"
+        >
+          {{
+            activeProduct === product.productKey
+              ? "Hide Details"
+              : "View Details"
+          }}
         </button>
       </div>
 
       <!-- Hover / Tap Details -->
       <div
-        class="absolute inset-0 bg-gray-900 bg-opacity-95 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col overflow-y-auto max-h-full scrollbar-hide"
-        [class.opacity-100]="activeProduct === product.productKey">
-
+        class="absolute inset-0 rounded-md bg-gray-900 bg-opacity-95 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col overflow-y-auto max-h-full scrollbar-hide"
+        [class.opacity-100]="activeProduct === product.productKey"
+      >
         <div class="h-1 gold-gradient mb-4"></div>
-        <h3 class="text-2xl font-semibold mb-4 gold-gradient-text">{{ product.name }}</h3>
+        <h3 class="text-2xl font-semibold mb-4 gold-gradient-text">
+          {{ product.name }}
+        </h3>
         <p class="text-gray-300 text-sm mb-4">{{ product.description }}</p>
 
         <div class="mb-4">
@@ -83,68 +102,91 @@
         </div>
 
         <p class="italic text-gray-400 text-sm mb-4">"{{ product.tagline }}"</p>
-
-        <button (click)="openModal(product.productKey)"
-          class="mt-auto gold-gradient text-black py-2 px-4 rounded-lg hover:brightness-110 transition-all font-medium">
-          Buy Now
-        </button>
       </div>
     </div>
   </div>
-
 </section>
 
 <!-- Modal -->
-<div *ngIf="showModal"
+<div
+  *ngIf="showModal"
   class="show-modal fixed inset-0 bg-black/80 flex items-center justify-center z-50 backdrop-blur-sm"
-  (click)="closeModal()">
-
+  (click)="closeModal()"
+>
   <!-- Modal Content -->
-  <div class="bg-gray-900 rounded-xl shadow-2xl p-8 max-w-lg w-full relative border border-gray-800"
-       (click)="$event.stopPropagation()">
-
+  <div
+    class="bg-gray-900 rounded-xl shadow-2xl p-8 max-w-lg w-full relative border border-gray-800"
+    (click)="$event.stopPropagation()"
+  >
     <!-- Gold gradient line at top -->
     <div class="absolute top-0 left-0 right-0 h-1 gold-gradient"></div>
 
     <!-- Close button -->
-    <button (click)="closeModal()"
-            class="absolute top-3 right-3 gold-gradient-text text-2xl hover:opacity-80 transition-opacity">&times;</button>
+    <button
+      (click)="closeModal()"
+      class="absolute top-3 right-3 gold-gradient-text text-2xl hover:opacity-80 transition-opacity"
+    >
+      &times;
+    </button>
 
     <!-- Modal heading -->
-    <h3 class="text-2xl font-semibold mb-6 gold-gradient-text playfair">Buy {{ selectedProduct }}</h3>
+    <h3 class="text-2xl font-semibold mb-6 gold-gradient-text playfair">
+      Buy {{ selectedProduct }}
+    </h3>
 
     <form (ngSubmit)="submitOrder()" [formGroup]="orderForm" class="space-y-4">
       <div class="relative">
-        <input formControlName="name" type="text" placeholder="Your Name"
-          class="w-full bg-gray-800 border border-gray-700 p-3 rounded-lg text-white focus:border-amber-400 focus:outline-none" required>
+        <input
+          formControlName="name"
+          type="text"
+          placeholder="Your Name"
+          class="w-full bg-gray-800 border border-gray-700 p-3 rounded-lg text-white focus:border-amber-400 focus:outline-none"
+          required
+        />
       </div>
 
       <div class="relative">
-        <input formControlName="email" type="email" placeholder="Email"
-          class="w-full bg-gray-800 border border-gray-700 p-3 rounded-lg text-white focus:border-amber-400 focus:outline-none" required>
+        <input
+          formControlName="email"
+          type="email"
+          placeholder="Email"
+          class="w-full bg-gray-800 border border-gray-700 p-3 rounded-lg text-white focus:border-amber-400 focus:outline-none"
+          required
+        />
       </div>
 
       <div class="relative">
-        <input formControlName="phone" type="tel" placeholder="Phone Number"
-          class="w-full bg-gray-800 border border-gray-700 p-3 rounded-lg text-white focus:border-amber-400 focus:outline-none" required>
+        <input
+          formControlName="phone"
+          type="tel"
+          placeholder="Phone Number"
+          class="w-full bg-gray-800 border border-gray-700 p-3 rounded-lg text-white focus:border-amber-400 focus:outline-none"
+          required
+        />
       </div>
 
       <div class="relative">
-        <textarea formControlName="address" placeholder="Shipping Address" rows="3"
-          class="w-full bg-gray-800 border border-gray-700 p-3 rounded-lg text-white focus:border-amber-400 focus:outline-none" required></textarea>
+        <textarea
+          formControlName="address"
+          placeholder="Shipping Address"
+          rows="3"
+          class="w-full bg-gray-800 border border-gray-700 p-3 rounded-lg text-white focus:border-amber-400 focus:outline-none"
+          required
+        ></textarea>
       </div>
 
-      <button type="submit"
-        class="w-full gold-gradient text-black py-3 rounded-lg hover:brightness-110 transition-all font-medium mt-6">
+      <button
+        type="submit"
+        class="w-full gold-gradient text-black py-3 rounded-lg hover:brightness-110 transition-all font-medium mt-6"
+      >
         Confirm Order
       </button>
     </form>
 
-    <p class="text-gray-400 text-xs text-center mt-6 poppins-light">Exclusive CEO Square Merchandise - Premium Quality Guaranteed</p>
+    <p class="text-gray-400 text-xs text-center mt-6 poppins-light">
+      Exclusive CEO Square Merchandise - Premium Quality Guaranteed
+    </p>
   </div>
 </div>
-
-
-
 
 <app-footer></app-footer>

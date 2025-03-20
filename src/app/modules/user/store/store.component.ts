@@ -74,9 +74,11 @@ export class StoreComponent {
     });
   }
 
+
   toggleProductDetails(productKey: string) {
     this.activeProduct = this.activeProduct === productKey ? null : productKey;
   }
+
   openModal(product: string) {
     this.selectedProduct = product;
     this.showModal = true;

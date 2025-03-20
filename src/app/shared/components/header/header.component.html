@@ -13,7 +13,7 @@
           *ngFor="let item of menuItems"
           [routerLink]="item.link"
           [routerLinkActiveOptions]="{ exact: true }"
-          [routerLinkActive]="!item.redirectType ? 'active' : ''"
+          [routerLinkActive]="'active'"
           class="mr-8 border-transparent text-gray-100 hover:text-gray-300 hover:border-gray-300 font-medium text-sm montserrat leading-5 pt-6 pb-2 transition duration-300"
         >
           {{ item.name }}
@@ -53,7 +53,7 @@
         *ngFor="let item of menuItems"
         [routerLink]="item.link"
         [routerLinkActiveOptions]="{ exact: true }"
-        [routerLinkActive]="!item.redirectType ? 'active' : ''"
+        [routerLinkActive]="'active'"
         class="block text-gray-100 hover:text-black mt-2 montserrat hover:bg-amber-300 px-3 py-2 rounded-md text-base font-medium transition duration-300"
       >
         {{ item.name }}

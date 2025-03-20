@@ -10,19 +10,19 @@ import { NavigationEnd, Router, RouterModule } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(@Inject(PLATFORM_ID) private platformId: any) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: any) { }
   ngOnInit(): void {
   }
   isMenuOpen = false;
   menuItems = [
-    { name: 'Home', link: '/', redirectType: false },
-    { name: 'About', link: '/about', redirectType: false },
-    { name: 'Membership', link: '/membership', redirectType: false },
-    { name: 'Magazine', link: '/membership', redirectType: true },   // Redirect to Membership
-    { name: 'Podcast', link: '/membership', redirectType: true },    // Redirect to Membership
-    { name: 'Course', link: '/membership', redirectType: true },
-    { name: 'Store', link: '/store', redirectType: false },
-    { name: 'Contact', link: '/contact', redirectType: false }
+    { name: 'Home', link: '/' },
+    { name: 'About', link: '/about' },
+    { name: 'Membership', link: '/membership' },
+    { name: 'Magazine', link: '/magazine' },   // Corrected link
+    { name: 'Podcast', link: '/podcast' },    // Corrected link
+    { name: 'Course', link: '/course' },      // Corrected link
+    { name: 'Store', link: '/store' },
+    { name: 'Contact', link: '/contact' }
   ];
 
 

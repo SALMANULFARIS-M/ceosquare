@@ -94,28 +94,28 @@ export class HomeComponent implements OnInit {
       designation: 'CEO – Ique Cap, Bengaluru, India',
       message: 'CEO Square provides the right space for founders to connect and grow. The meaningful conversations and collaborations here have been invaluable for me and my company. It’s a must-have network for any entrepreneur...',
       initial: 'S',
-      image: 'https://www.ceosquare.in/shaaz.jpg'
+      image: 'https://res.cloudinary.com/dbd3pndmo/image/upload/v1742464092/shaaz_fzgutv.jpg'
     },
     {
       name: 'Shefin',
       designation: 'CEO – StudyinBengaluru, Bengaluru, India',
       message: 'CEO Square has been a game-changer for me. The mentorship and networking opportunities have helped refine my strategies and expand my connections. It’s a community that truly supports entrepreneurs...',
       initial: 'S',
-      image: 'https://www.ceosquare.in/shefin.JPG'
+      image: 'https://res.cloudinary.com/dbd3pndmo/image/upload/v1742464092/shefin_tbdm4c.jpg'
     },
     {
       name: 'Hashim',
       designation: 'CEO – Career Cafe, Bengaluru, India',
       message: 'Joining CEO Square gave me access to the right people and insights to scale my business. The support and collaboration within the community have made a huge difference. It’s a space where entrepreneurs truly help each other succeed...',
       initial: 'H',
-      image: 'https://www.ceosquare.in/hashim.jpg'
+      image: 'https://res.cloudinary.com/dbd3pndmo/image/upload/v1742464091/hashim_kvocou.jpg'
     },
     {
       name: 'Indumathi Murthy',
       designation: 'CEO – Incube Nation , Bengaluru, India',
       message: 'CEO Square has been an incredible platform for meaningful connections and growth. Engaging with like-minded founders and industry experts has been a great experience. The support and mentorship here are truly empowering...',
       initial: 'I',
-      image: 'https://www.ceosquare.in/indu.jpg'
+      image: 'https://res.cloudinary.com/dbd3pndmo/image/upload/v1742464091/indu_n6r1u1.jpg'
     }
   ];
 

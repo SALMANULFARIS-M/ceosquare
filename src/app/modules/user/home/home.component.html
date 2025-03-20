@@ -605,8 +605,9 @@
                   [src]="testimonial.image"
                   alt="{{ testimonial.name }}"
                   class="h-full w-full object-cover"
-                  fetchpriority="high"
-                />
+                  loading="lazy"
+                  [attr.srcset]="testimonial.initial + ' 300w, ' + testimonial.image + ' 600w'"
+                                  />
                 <span
                   *ngIf="!testimonial.image"
                   class="text-2xl font-bold text-white gold-gradient-text h-full w-full flex items-center justify-center rounded-full playfair"
