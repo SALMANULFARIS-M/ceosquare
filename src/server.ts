@@ -112,7 +112,6 @@ app.post('/api/send-order', async (req, res) => {
 
     res.status(200).json({ success: true, message: 'Order received' });
   } catch (err) {
-    console.error("Email sending error:", err);
     res.status(500).json({ success: false, message: 'Failed to send email' });
   }
 });
