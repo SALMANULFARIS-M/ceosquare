@@ -84,10 +84,19 @@
       </div>
 
       <!-- Hover / Tap Details -->
-      <div
-        class="absolute inset-0 rounded-md bg-gray-900 bg-opacity-95 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col overflow-y-auto max-h-full scrollbar-hide"
-        [class.opacity-100]="activeProduct === product.productKey"
-      >
+      <!-- Hover / Tap Details with Slide-up Effect -->
+<!-- Hover / Tap Details with Smooth Slide-up and Delay -->
+<div
+  class="absolute inset-0 rounded-md bg-gray-900 bg-opacity-95 p-6 opacity-0 translate-y-10
+         group-hover:opacity-100 group-hover:translate-y-0 group-hover:delay-200
+         transition-all duration-700 ease-out flex flex-col overflow-y-auto max-h-full scrollbar-hide"
+  [class.opacity-100]="activeProduct === product.productKey"
+  [class.translate-y-0]="activeProduct === product.productKey"
+  [class.translate-y-10]="activeProduct !== product.productKey"
+  [class.delay-200]="activeProduct === product.productKey"
+>
+
+
         <div class="h-1 gold-gradient mb-4"></div>
         <h3 class="text-2xl font-semibold mb-4 gold-gradient-text">
           {{ product.name }}
