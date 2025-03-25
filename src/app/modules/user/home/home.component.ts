@@ -5,7 +5,6 @@ import { FooterComponent } from '../../../shared/components/footer/footer.compon
 import { fadeInUpAnimation, slideLeftAnimation, slideRightAnimation, zoomInAnimation   } from '../../../shared/constants/animation';
 import { AnimationDirective } from '../../../shared/constants/animation.directive';
 import { ScrollingModule } from '@angular/cdk/scrolling';
-import { loadavg } from 'os';
 
 @Component({
   selector: 'app-home',
@@ -19,8 +18,6 @@ export class HomeComponent implements OnInit {
 
   isValueInView = false;
 
-  images = ['/head.webp', '/head2.png'];
-  currentImage = this.images[0];
   animationState: 'enter' | 'leave' = 'enter';
   private index = 0;
   interval: string | number | NodeJS.Timeout | undefined
@@ -29,16 +26,6 @@ export class HomeComponent implements OnInit {
   constructor(@Inject(PLATFORM_ID) private platformId: object, private el: ElementRef) { this.isBrowser = isPlatformBrowser(this.platformId); }
 
   ngOnInit() {
-    if (isPlatformBrowser(this.platformId)) {
-      this.interval = setInterval(() => {
-        this.animationState = 'leave';
-        setTimeout(() => {
-          this.index = (this.index + 1) % this.images.length;
-          this.currentImage = this.images[this.index];
-          this.animationState = 'enter';
-        }, 800); // Match with animation duration
-      }, 4000);
-    }
   }
   onImageLoad(event: Event) {
     (event.target as HTMLImageElement).classList.add('opacity-100');
