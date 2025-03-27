@@ -73,6 +73,7 @@
     >
       <div class="absolute inset-0 clip-diagonal-right">
         <img
+        loading="lazy"
           src="/hero.avif"
           alt="Networking"
           class="w-full h-full object-cover brightness-90"
@@ -91,6 +92,7 @@
     <!-- Right Side Image -->
     <div class="md:w-1/2">
       <img
+      loading="lazy"
         src="check.jpg"
         alt="Leadership"
         class="w-full rounded-xl shadow-lg transition-transform duration-700 scale-100"
@@ -101,7 +103,7 @@
     <div class="md:w-1/2">
       <!-- Logo -->
       <div class="flex justify-center mb-4 sm:mb-6">
-        <img src="/logo-s.png" alt="CEO Square Logo" class="w-48" />
+        <img  loading="lazy"  src="/logo-s.png" alt="CEO Square Logo" class="w-48" />
       </div>
       <!-- Heading -->
       <h1
@@ -638,6 +640,7 @@
                 class="h-16 w-16 rounded-full overflow-hidden bg-blue-900 flex items-center justify-center border-2 border-gray-300"
               >
                 <img
+                loading="lazy"
                   *ngIf="testimonial.image"
                   [src]="testimonial.image"
                   alt="{{ testimonial.name }}"

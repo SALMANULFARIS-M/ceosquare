@@ -49,6 +49,7 @@
       <!-- Default View -->
       <div class="h-56 flex items-center justify-center mb-4">
         <img
+          loading="lazy"
           src="{{ product.image }}"
           alt="{{ product.name }}"
           class="max-h-full object-contain mx-auto transition-transform duration-500 group-hover:scale-105"
@@ -108,6 +109,59 @@
 
         <p class="italic text-gray-400 text-sm mb-4">"{{ product.tagline }}"</p>
       </div>
+    </div>
+  </div>
+  <!-- Additional Information -->
+  <div class="mt-16 text-center">
+    <h2 class="text-3xl font-semibold mb-6 playfair-display gold-gradient-text">
+      Why Choose CEO Square Merchandise?
+    </h2>
+    <ul class="text-lg text-white gap-2 flex flex-col merriweather-bold">
+      <li>
+        ✅ <strong>Quality Assurance : </strong
+        ><span class="text-gray-300 montserrat">
+          Every product is crafted with premium materials for durability and
+          style.</span
+        >
+      </li>
+      <li>
+        ✅ <strong>Brand Pride : </strong>
+        <span class="text-gray-300 montserrat"
+          >Showcase your connection to a community of innovators and
+          leaders.</span
+        >
+      </li>
+      <li>
+        ✅ <strong>Perfect for Gifting : </strong>
+        <span class="text-gray-300 montserrat"
+          >Ideal for mentors, partners, or team members.</span
+        >
+      </li>
+    </ul>
+  </div>
+
+  <!-- Pricing & Availability -->
+  <div class="mt-12 text-center">
+    <h2 class="text-3xl font-semibold mb-6 playfair-display gold-gradient-text">
+      Pricing & Availability
+    </h2>
+    <div class="text-lg text-white gap-2 flex flex-col merriweather-bold">
+      <p>
+        👕 <strong>Polo Neck T-Shirt : </strong>
+        <span class="text-gray-300 montserrat">
+          ₹1199 (Free shipping above ₹1,499).</span
+        >
+      </p>
+      <p>
+        ☕ <strong>Logo Mug : </strong
+        ><span class="text-gray-300 montserrat">
+          ₹399 (Bundle with T-Shirt for ₹1,299).</span
+        >
+      </p>
+      <p>
+        📔 <strong>Organizer with Pen : </strong
+        ><span class="text-gray-300 montserrat"> ₹799 (Limited stock).</span>
+      </p>
     </div>
   </div>
 </section>
@@ -233,7 +287,12 @@
 
     <!-- Logo in center -->
     <div class="absolute inset-0 flex items-center justify-center">
-      <img src="/favicon.png" alt="Logo" class="w-12 h-12 rotate-logo" />
+      <img
+        loading="lazy"
+        src="/favicon.png"
+        alt="Logo"
+        class="w-12 h-12 rotate-logo"
+      />
     </div>
   </div>
 </div>
