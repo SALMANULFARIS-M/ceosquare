@@ -25,79 +25,51 @@
     </p>
   </div>
 </div>
-<div
-  class="relative w-full bg-cover bg-center text-center px-5"
-  style="background-image: url('https://i.pinimg.com/736x/43/69/dd/4369dd89280fc9224e58ac2c1f0cf8ba.jpg');"
->
+<section class="relative py-20 px-5">
   <div class="absolute inset-0 bg-gradient-to-r from-black/30 via-black/50 to-black/30 backdrop-blur-sm"></div>
 
-  <div
-    class="relative z-50 flex flex-col justify-center items-center text-white w-full h-[50vh]"
-  >
-    <h1 class="text-4xl md:text-6xl font-semibold gold-gradient-text">
-      We are <b>Almost</b> there!
-    </h1>
-    <p class="mt-4 text-lg md:text-xl">Stay tuned for something amazing!!!</p>
+  <div class="relative max-w-7xl mx-auto text-center">
+    <h2 class="gold-gradient-text text-4xl md:text-5xl font-bold mb-12 playfair">
+      🎙️ Featured Podcast Episodes
+    </h2>
 
-    <div class="mt-10 w-full max-w-2xl mx-auto px-4">
-      <div class="w-full bg-white rounded-full shadow">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div
+        *ngFor="let video of videos"
+        class="relative rounded-2xl overflow-hidden group shadow-xl border border-white/10 bg-white/5 backdrop-blur-sm transition transform hover:scale-105"
+      >
+        <!-- Thumbnail -->
+        <img
+          [src]="'https://img.youtube.com/vi/' + video.id + '/hqdefault.jpg'"
+          [alt]="video.title"
+          class="w-full h-56 object-cover"
+          loading="lazy"
+        />
+
+        <!-- Hover Play Icon -->
         <div
-          class="gold-gradient text-xs leading-none text-center text-black py-2 rounded-full"
-          style="width: 75%"
+          class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition"
         >
-          75%
+          <a
+            [href]="'https://www.youtube.com/watch?v=' + video.id"
+            target="_blank"
+            class="text-white text-5xl hover:scale-125 transition"
+            aria-label="Watch Video"
+          >
+            ▶
+          </a>
+        </div>
+
+        <!-- Content -->
+        <div class="p-4 text-white text-left">
+          <h3 class="text-xl font-semibold mb-2">{{ video.title }}</h3>
+          <p class="text-sm text-indigo-100">{{ video.desc }}</p>
         </div>
       </div>
     </div>
-
-    <div class="mt-10 flex flex-wrap justify-center gap-5">
-      <a
-        href="https://www.facebook.com/profile.php?id=61573839324883"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="hover:scale-110 transition duration-300"
-      >
-        <img  loading="lazy"
-          src="https://img.icons8.com/fluent/30/ffffff/facebook-new.png"
-          alt="Facebook"
-        />
-      </a>
-      <a
-        href="https://www.instagram.com/ceo.square.kerala.official?igsh=aWVhZzZsZ2JqZzVp"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="hover:scale-110 transition duration-300"
-      >
-        <img  loading="lazy"
-          src="https://img.icons8.com/fluent/30/ffffff/instagram-new.png"
-          alt="Instagram"
-        />
-      </a>
-      <a
-        href="https://www.youtube.com/@Ceosquare-bangalore"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="hover:scale-110 transition duration-300"
-      >
-        <img  loading="lazy"
-          src="https://img.icons8.com/fluent/30/ffffff/youtube-play.png"
-          alt="YouTube"
-        />
-      </a>
-      <a
-        href="https://www.linkedin.com/company/99244542/admin/dashboard/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="hover:scale-110 transition duration-300"
-      >
-        <img  loading="lazy"
-          src="https://img.icons8.com/fluent/30/ffffff/linkedin.png"
-          alt="LinkedIn"
-        />
-      </a>
-    </div>
   </div>
-</div>
+</section>
+
 
 
 <app-footer></app-footer>
