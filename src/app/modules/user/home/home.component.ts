@@ -1,17 +1,19 @@
-import { Component, ElementRef, Inject, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
+import { Component, ElementRef, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { HeaderComponent } from '../../../shared/components/header/header.component';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FooterComponent } from '../../../shared/components/footer/footer.component';
-import { fadeInUpAnimation, slideLeftAnimation, slideRightAnimation, zoomInAnimation   } from '../../../shared/constants/animation';
+import { fadeInUpAnimation, slideLeftAnimation, slideRightAnimation, zoomInAnimation } from '../../../shared/constants/animation';
 import { AnimationDirective } from '../../../shared/constants/animation.directive';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
+
 @Component({
   selector: 'app-home',
-  imports: [HeaderComponent, CommonModule, FooterComponent,AnimationDirective,ScrollingModule],
+  imports: [HeaderComponent, CommonModule, FooterComponent, AnimationDirective, ScrollingModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
-  animations: [fadeInUpAnimation, slideLeftAnimation, slideRightAnimation, zoomInAnimation]})
+  animations: [fadeInUpAnimation, slideLeftAnimation, slideRightAnimation, zoomInAnimation]
+})
 
 export class HomeComponent implements OnInit {
 
@@ -21,11 +23,18 @@ export class HomeComponent implements OnInit {
   animationState: 'enter' | 'leave' = 'enter';
   private index = 0;
   interval: string | number | NodeJS.Timeout | undefined
-  isBrowser:boolean
+  isBrowser: boolean
+  currentIndex = 0;
+  intervals: any;
 
   constructor(@Inject(PLATFORM_ID) private platformId: object, private el: ElementRef) { this.isBrowser = isPlatformBrowser(this.platformId); }
 
   ngOnInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.intervals = setInterval(() => {
+        this.currentIndex = (this.currentIndex + 1) % this.images.length;
+      }, 5000);
+    }
   }
   onImageLoad(event: Event) {
     (event.target as HTMLImageElement).classList.add('opacity-100');
@@ -106,10 +115,20 @@ export class HomeComponent implements OnInit {
     }
   ];
 
+  images = [
+    'https://ik.imagekit.io/jkuuya2tn/DSC00488.webp?updatedAt=1752217039247',
+    'https://ik.imagekit.io/jkuuya2tn/DSC00296.webp?updatedAt=1752217039143',
+    'https://ik.imagekit.io/jkuuya2tn/DSC00183.webp?updatedAt=1752217038835',
+    'https://ik.imagekit.io/jkuuya2tn/DSC00468.JPG?updatedAt=1752214702004',
+    'https://ik.imagekit.io/jkuuya2tn/DSC00302.webp?updatedAt=1752216977466',
+  ];
 
   ngOnDestroy() {
     if (isPlatformBrowser(this.platformId)) {
       clearInterval(this.interval);
+      if (this.intervals) {
+        clearInterval(this.intervals);
+      }
     }
   }
 }
