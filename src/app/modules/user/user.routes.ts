@@ -19,7 +19,7 @@ export const USER_ROUTES: Routes = [
   { path: 'podcast', component: PodcastComponent },
   { path: 'course', component: CourseComponent },
   { path: 'store', component: StoreComponent },
-    { path: 'contact', component: ContactComponent },
+  { path: 'contact', component: ContactComponent },
   { path: 'terms-of-service', component: PrivacyComponent },
   { path: 'privacy-policy', component: PrivacyComponent },
 ];

@@ -22,6 +22,7 @@ export class HeaderComponent implements OnInit {
     { name: 'Podcast', link: '/podcast' },    // Corrected link
     { name: 'Course', link: '/course' },      // Corrected link
     { name: 'Store', link: '/store' },
+    { name: 'Blog', link: '/blog' },
     { name: 'Contact', link: '/contact' }
   ];
 
