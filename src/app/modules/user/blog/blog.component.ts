@@ -22,15 +22,6 @@ export class BlogComponent {
       date: '2025-10-30',
       author: 'CEO Square Team',
     },
-    {
-      id: 2,
-      title: 'Mastering Growth Mindset for Modern Leaders',
-      slug: 'growth-mindset-for-leaders',
-      excerpt:
-        'Learn how growth mindset principles can transform leadership effectiveness and team performance in 2025.',
-      date: '2025-09-22',
-      author: 'CEO Square Editorial',
-    },
   ];
 
 
