@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import {HomeComponent } from './home/home.component';
+import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { MembershipComponent } from './membership/membership.component';
@@ -8,6 +8,8 @@ import { StoreComponent } from './store/store.component';
 import { MagazineComponent } from './magazine/magazine.component';
 import { PodcastComponent } from './podcast/podcast.component';
 import { CourseComponent } from './course/course.component';
+import { BlogComponent } from './blog/blog.component';
+import { BlogDetailsComponent } from './blog/blog-details/blog-details.component';
 
 
 
@@ -20,6 +22,8 @@ export const USER_ROUTES: Routes = [
   { path: 'course', component: CourseComponent },
   { path: 'store', component: StoreComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'blog', component: BlogComponent },
+  { path: 'blog/:slug', component: BlogDetailsComponent },
   { path: 'terms-of-service', component: PrivacyComponent },
   { path: 'privacy-policy', component: PrivacyComponent },
 ];
