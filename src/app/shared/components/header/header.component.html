@@ -1,6 +1,6 @@
 <nav
   class="fixed w-full bg-black/30 backdrop-blur-md  shadow-lg z-50"
->
+  >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between h-20 items-center">
       <!-- Logo -->
@@ -9,15 +9,16 @@
       </div>
       <!-- Desktop Menu -->
       <div class="md:flex items-center hidden">
-        <a
-          *ngFor="let item of menuItems"
-          [routerLink]="item.link"
-          [routerLinkActiveOptions]="{ exact: true }"
-          [routerLinkActive]="'active'"
-          class="mr-8 border-transparent text-gray-100 hover:text-gray-300 hover:border-gray-300 font-medium text-sm montserrat leading-5 pt-6 pb-2 transition duration-300"
-        >
-          {{ item.name }}
-        </a>
+        @for (item of menuItems; track item) {
+          <a
+            [routerLink]="item.link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            [routerLinkActive]="'active'"
+            class="mr-8 border-transparent text-gray-100 hover:text-gray-300 hover:border-gray-300 font-medium text-sm montserrat leading-5 pt-6 pb-2 transition duration-300"
+            >
+            {{ item.name }}
+          </a>
+        }
       </div>
 
       <!-- Mobile Menu Button -->
@@ -25,13 +26,13 @@
         <button
           (click)="toggleMenu()"
           class="inline-flex items-center justify-center p-2 rounded-md text-[#C0C9C6] hover:text-[#C0C9C6] hover:bg-[#C0C9C6] transition duration-300"
-        >
+          >
           <svg
             class="h-6 w-6"
             stroke="currentColor"
             fill="none"
             viewBox="0 0 24 24"
-          >
+            >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -48,16 +49,17 @@
   <div class="hidden sm:hidden" [ngClass]="{ hidden: !isMenuOpen }">
     <div
       class="bg-gradient-to-r from-black/30 to-yellow-400/40 shadow-lg backdrop-blur-3xl px-2 pt-2 pb-3"
-    >
-      <a
-        *ngFor="let item of menuItems"
-        [routerLink]="item.link"
-        [routerLinkActiveOptions]="{ exact: true }"
-        [routerLinkActive]="'active'"
-        class="block text-gray-100 hover:text-black mt-2 montserrat hover:bg-amber-300 px-3 py-2 rounded-md text-base font-medium transition duration-300"
       >
-        {{ item.name }}
-      </a>
+      @for (item of menuItems; track item) {
+        <a
+          [routerLink]="item.link"
+          [routerLinkActiveOptions]="{ exact: true }"
+          [routerLinkActive]="'active'"
+          class="block text-gray-100 hover:text-black mt-2 montserrat hover:bg-amber-300 px-3 py-2 rounded-md text-base font-medium transition duration-300"
+          >
+          {{ item.name }}
+        </a>
+      }
     </div>
   </div>
 </nav>

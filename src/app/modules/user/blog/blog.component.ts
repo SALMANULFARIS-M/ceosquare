@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
 import { FooterComponent } from '../../../shared/components/footer/footer.component';
 import { HeaderComponent } from '../../../shared/components/header/header.component';
-import { CommonModule } from '@angular/common';
+
 import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-blog',
-  imports: [HeaderComponent, FooterComponent,CommonModule,RouterModule],
+  imports: [HeaderComponent, FooterComponent, RouterModule],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.css'
 })
 export class BlogComponent {
 
- blogs = [
+  blogs = [
     {
       id: 1,
       title: 'Top 10 Leadership Podcasts to Follow in 2025 | CEO Square',

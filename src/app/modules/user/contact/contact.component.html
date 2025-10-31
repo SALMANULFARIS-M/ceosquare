@@ -2,60 +2,60 @@
 <div
   class="relative bg-fixed bg-center bg-cover"
   style="background-image: url('/bg-image.jpeg')"
->
+  >
 
   <div class="absolute inset-0">
     <div
-    class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70 backdrop-blur-sm"
-    aria-hidden="true"
-  ></div>
+      class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70 backdrop-blur-sm"
+      aria-hidden="true"
+    ></div>
   </div>
   <div
     class="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8 text-center"
-  >
+    >
     <h1
       class="text-4xl sm:text-5xl lg:text-6xl playfair flex items-center justify-center text-white tracking-tight"
-    >
+      >
 
-    Contact us
+      Contact us
     </h1>
     <p class="mt-6 max-w-3xl mx-auto text-xl text-indigo-100 poppins-light text-justify md:text-center">
-      We’d love to hear from you! Whether you have questions about our membership program, need assistance, or want to share your thoughts, our team is here to help.  </div>
-</div>
-<section class="mb-32">
-  <div
-    id="map"
-    class="relative h-[300px] overflow-hidden bg-cover bg-[50%] bg-no-repeat"
-  >
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.612896050183!2d77.61072759678956!3d12.932583399999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xe1fa91bd7846311%3A0x6582745d28f4347f!2sique%20ventures!5e0!3m2!1sen!2sin!4v1742538948407!5m2!1sen!2sin"
-      width="100%"
-      height="480"
-      style="border: 0"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-    ></iframe>
+    We’d love to hear from you! Whether you have questions about our membership program, need assistance, or want to share your thoughts, our team is here to help.  </div>
   </div>
-  <div class="container px-6 md:px-12">
-
+  <section class="mb-32">
     <div
-      class="block rounded-lg bg-gray-200 px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] md:py-16 md:px-12 -mt-[100px] backdrop-blur-[30px] border-2 border-[#2D1044]"
-    >
-      <div class="flex flex-wrap">
-        <div
-          class="mb-12 w-full shrink-0 grow-0 basis-auto md:px-3 lg:mb-0 lg:w-5/12 lg:px-6"
+      id="map"
+      class="relative h-[300px] overflow-hidden bg-cover bg-[50%] bg-no-repeat"
+      >
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.612896050183!2d77.61072759678956!3d12.932583399999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xe1fa91bd7846311%3A0x6582745d28f4347f!2sique%20ventures!5e0!3m2!1sen!2sin!4v1742538948407!5m2!1sen!2sin"
+        width="100%"
+        height="480"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+    <div class="container px-6 md:px-12">
+
+      <div
+        class="block rounded-lg bg-gray-200 px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] md:py-16 md:px-12 -mt-[100px] backdrop-blur-[30px] border-2 border-[#2D1044]"
         >
-          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-            <div class="relative mb-6" data-te-input-wrapper-init>
-              <input
-                type="text"
-                class="peer text-black block min-h-[auto] w-full rounded border-2 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none"
-                id="name"
-                formControlName="name"
-                required
-              />
-              <label
+        <div class="flex flex-wrap">
+          <div
+            class="mb-12 w-full shrink-0 grow-0 basis-auto md:px-3 lg:mb-0 lg:w-5/12 lg:px-6"
+            >
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+              <div class="relative mb-6" data-te-input-wrapper-init>
+                <input
+                  type="text"
+                  class="peer text-black block min-h-[auto] w-full rounded border-2 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none"
+                  id="name"
+                  formControlName="name"
+                  required
+                  />
+                  <label
                 class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-[#2D1044] transition-all duration-200 ease-out
                   peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary
                   peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8]
@@ -65,215 +65,220 @@
                     ? '-translate-y-[0.9rem] scale-[0.8]'
                     : ''
                 }}"
-                for="name"
-                >Name</label
-              >
-            </div>
+                    for="name"
+                    >Name</label
+                    >
+                  </div>
 
-            <div class="relative mb-6" data-te-input-wrapper-init>
-              <input
-                type="email"
-                class="text-black peer block min-h-[auto] w-full rounded border-2 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none"
-                id="email"
-                formControlName="email"
-                required
-              />
-              <label
+                  <div class="relative mb-6" data-te-input-wrapper-init>
+                    <input
+                      type="email"
+                      class="text-black peer block min-h-[auto] w-full rounded border-2 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none"
+                      id="email"
+                      formControlName="email"
+                      required
+                      />
+                      <label
                 class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-[#2D1044] transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0
                 {{
                   contactForm.get('email')!.value
                     ? '-translate-y-[0.9rem] scale-[0.8]'
                     : ''
                 }}"
-                for="email"
-                >Email address</label
-              >
-              <span
-                *ngIf="
-                  contactForm.controls['email'].invalid &&
-                  contactForm.controls['email'].touched
-                "
-                class="text-red-500"
-              >
-                Please enter a valid email address.
-              </span>
-            </div>
+                        for="email"
+                        >Email address</label
+                        >
+                        @if (
+                          contactForm.controls['email'].invalid &&
+                          contactForm.controls['email'].touched
+                          ) {
+                          <span
+                            class="text-red-500"
+                            >
+                            Please enter a valid email address.
+                          </span>
+                        }
+                      </div>
 
-            <div class="relative mb-6" data-te-input-wrapper-init>
-              <textarea
-                formControlName="message"
-                class="text-black peer block min-h-[auto] w-full rounded border-2 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none"
-                id="message"
-                rows="3"
-                required
-              ></textarea>
-              <label
-                for="message"
+                      <div class="relative mb-6" data-te-input-wrapper-init>
+                        <textarea
+                          formControlName="message"
+                          class="text-black peer block min-h-[auto] w-full rounded border-2 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none"
+                          id="message"
+                          rows="3"
+                          required
+                        ></textarea>
+                        <label
+                          for="message"
                 class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-[#2D1044] transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0
                 {{
                   contactForm.get('message')!.value
                     ? '-translate-y-[0.9rem] scale-[0.8]'
                     : ''
                 }}"
-                >Message</label
-              >
-            </div>
+                          >Message</label
+                          >
+                        </div>
 
-            <button
-              type="submit"
-              class="text-[#2D1044] border-2 noto-serif-custom-1 md:w-80 border-white/30 hover:border-white/50 backdrop-blur-md px-4 py-3 text-lg atkinson-hyperlegible-next-custom-2 rounded-2xl font-medium bg-black/50 hover:bg-white/20 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform-gpu block mx-auto md:px-3 md:py-2 md:text-base"
-              [disabled]="isLoading" >
-            <span *ngIf="!isLoading">Submit</span>
-            <span *ngIf="isLoading">Submitting...</span>            </button>
-          </form>
-        </div>
-        <div class="w-full shrink-0 grow-0 basis-auto lg:w-7/12">
-          <div class="flex flex-wrap">
-            <div
-              class="mb-12 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:mb-12 lg:w-full lg:px-6 xl:w-6/12"
-            >
-              <div class="align-start flex">
-                <div class="shrink-0">
-                  <a href="https://wa.me/9035052278" target="_blank">
-                    <div
-                      class="inline-block rounded-md bg-white shadow-md p-3 text-[#2D1044]"
-                    >
-                      <i class="bx bxl-whatsapp text-4xl"></i>
-                    </div>
-                  </a>
-                </div>
-                <div class="ml-6 grow">
-                  <p class="mb-2 font-bold text-[#2D1044] merriweather-bold">WhatsApp</p>
-                  <p class="text-[#2D1044]">
-                    <a href="https://wa.me/9035052278" target="_blank"
-                      >+91 9035052278</a
-                    >
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:w-full lg:px-6 xl:mb-12 xl:w-6/12"
-            >
-            <div class="align-start flex">
-              <a href="tel:+919035052278" class="shrink-0">
-                <div
-                  class="inline-block rounded-md bg-white p-4 text-[#2D1044] merriweather-bold shadow-md hover:scale-105 transition-transform duration-300"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="w-6 h-6"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"
-                    />
-                  </svg>
-                </div>
-              </a>
-              <div class="ml-6 grow">
-                <p class="mb-2 font-bold text-[#2D1044] merriweather-bold">Mobile</p>
-                <a href="tel:+919035052278" class="text-[#2D1044] hover:underline">
-                  +91 9035052278
-                </a>
-              </div>
-            </div>
+                        <button
+                          type="submit"
+                          class="text-[#2D1044] border-2 noto-serif-custom-1 md:w-80 border-white/30 hover:border-white/50 backdrop-blur-md px-4 py-3 text-lg atkinson-hyperlegible-next-custom-2 rounded-2xl font-medium bg-black/50 hover:bg-white/20 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform-gpu block mx-auto md:px-3 md:py-2 md:text-base"
+                          [disabled]="isLoading" >
+                          @if (!isLoading) {
+                            <span>Submit</span>
+                          }
+                          @if (isLoading) {
+                            <span>Submitting...</span>
+                          }            </button>
+                        </form>
+                      </div>
+                      <div class="w-full shrink-0 grow-0 basis-auto lg:w-7/12">
+                        <div class="flex flex-wrap">
+                          <div
+                            class="mb-12 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:mb-12 lg:w-full lg:px-6 xl:w-6/12"
+                            >
+                            <div class="align-start flex">
+                              <div class="shrink-0">
+                                <a href="https://wa.me/9035052278" target="_blank">
+                                  <div
+                                    class="inline-block rounded-md bg-white shadow-md p-3 text-[#2D1044]"
+                                    >
+                                    <i class="bx bxl-whatsapp text-4xl"></i>
+                                  </div>
+                                </a>
+                              </div>
+                              <div class="ml-6 grow">
+                                <p class="mb-2 font-bold text-[#2D1044] merriweather-bold">WhatsApp</p>
+                                <p class="text-[#2D1044]">
+                                  <a href="https://wa.me/9035052278" target="_blank"
+                                    >+91 9035052278</a
+                                    >
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:w-full lg:px-6 xl:mb-12 xl:w-6/12"
+                              >
+                              <div class="align-start flex">
+                                <a href="tel:+919035052278" class="shrink-0">
+                                  <div
+                                    class="inline-block rounded-md bg-white p-4 text-[#2D1044] merriweather-bold shadow-md hover:scale-105 transition-transform duration-300"
+                                    >
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 24 24"
+                                      stroke-width="1.5"
+                                      stroke="currentColor"
+                                      class="w-6 h-6"
+                                      >
+                                      <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"
+                                        />
+                                      </svg>
+                                    </div>
+                                  </a>
+                                  <div class="ml-6 grow">
+                                    <p class="mb-2 font-bold text-[#2D1044] merriweather-bold">Mobile</p>
+                                    <a href="tel:+919035052278" class="text-[#2D1044] hover:underline">
+                                      +91 9035052278
+                                    </a>
+                                  </div>
+                                </div>
 
-            </div>
-            <div
-              class="mb-12 mt-4 md:mt-0 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:mb-12 lg:w-full lg:px-6 xl:w-6/12"
-            >
-              <div class="align-start flex">
-                <div class="shrink-0">
-                  <a href="mailto:info@studyinbengaluru.com">
-                    <div
-                      class="inline-block rounded-md bg-white shadow-md p-4 text-[#2D1044]"
-                    >
-                      <i class="bx bxs-envelope text-3xl"></i>
-                    </div>
-                  </a>
-                </div>
-                <div class="ml-6 grow">
-                  <p class="mb-2 font-bold text-[#2D1044] merriweather-bold">Email</p>
-                  <p class="text-[#2D1044]">
-                    <a
-                      href="mailto:info@ceosquare.in"
-                      class="text-[#2D1044]"
-                      >info&#64;ceosquare.in </a
-                    >
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="mb-12 w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:w-full lg:px-6 xl:w-6/12"
-            >
-            <div class="flex items-start">
-              <a
-                href="https://www.google.com/maps/place/CEO+Square,+door+no.+84,+3rd+Cross+Rd,+5th+Block,+Koramangala,+Bengaluru,+Karnataka+560095"
-                target="_blank"
-                class="shrink-0"
-              >
-                <div class="inline-block rounded-md bg-white shadow-md p-4 text-[#2D1044] hover:scale-105 transition-transform duration-300">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="2"
-                    stroke="currentColor"
-                    class="w-7 h-7"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm1.294 6.336a6.721 6.721 0 01-3.17.789 6.721 6.721 0 01-3.168-.789 3.376 3.376 0 016.338 0z"
-                    />
-                  </svg>
-                </div>
-              </a>
+                              </div>
+                              <div
+                                class="mb-12 mt-4 md:mt-0 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:mb-12 lg:w-full lg:px-6 xl:w-6/12"
+                                >
+                                <div class="align-start flex">
+                                  <div class="shrink-0">
+                                    <a href="mailto:info@studyinbengaluru.com">
+                                      <div
+                                        class="inline-block rounded-md bg-white shadow-md p-4 text-[#2D1044]"
+                                        >
+                                        <i class="bx bxs-envelope text-3xl"></i>
+                                      </div>
+                                    </a>
+                                  </div>
+                                  <div class="ml-6 grow">
+                                    <p class="mb-2 font-bold text-[#2D1044] merriweather-bold">Email</p>
+                                    <p class="text-[#2D1044]">
+                                      <a
+                                        href="mailto:info@ceosquare.in"
+                                        class="text-[#2D1044]"
+                                        >info&#64;ceosquare.in </a
+                                        >
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="mb-12 w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:w-full lg:px-6 xl:w-6/12"
+                                  >
+                                  <div class="flex items-start">
+                                    <a
+                                      href="https://www.google.com/maps/place/CEO+Square,+door+no.+84,+3rd+Cross+Rd,+5th+Block,+Koramangala,+Bengaluru,+Karnataka+560095"
+                                      target="_blank"
+                                      class="shrink-0"
+                                      >
+                                      <div class="inline-block rounded-md bg-white shadow-md p-4 text-[#2D1044] hover:scale-105 transition-transform duration-300">
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="2"
+                                          stroke="currentColor"
+                                          class="w-7 h-7"
+                                          >
+                                          <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm1.294 6.336a6.721 6.721 0 01-3.17.789 6.721 6.721 0 01-3.168-.789 3.376 3.376 0 016.338 0z"
+                                            />
+                                          </svg>
+                                        </div>
+                                      </a>
 
-              <div class="ml-6 grow">
-                <p class="mb-2 font-bold text-[#2D1044] merriweather-bold">Address</p>
-                <a
-                  href="https://www.google.com/maps/place/CEO+Square,+door+no.+84,+3rd+Cross+Rd,+5th+Block,+Koramangala,+Bengaluru,+Karnataka+560095"
-                  target="_blank"
-                  class="text-sm text-[#2D1044] pt-serif-regular hover:underline"
-                >
-                  CEO Square, Door No. 84, 3rd Cross Rd, 5th Block,<br />
-                  Koramangala, Bengaluru, Karnataka 560095
-                </a>
-              </div>
-            </div>
+                                      <div class="ml-6 grow">
+                                        <p class="mb-2 font-bold text-[#2D1044] merriweather-bold">Address</p>
+                                        <a
+                                          href="https://www.google.com/maps/place/CEO+Square,+door+no.+84,+3rd+Cross+Rd,+5th+Block,+Koramangala,+Bengaluru,+Karnataka+560095"
+                                          target="_blank"
+                                          class="text-sm text-[#2D1044] pt-serif-regular hover:underline"
+                                          >
+                                          CEO Square, Door No. 84, 3rd Cross Rd, 5th Block,<br />
+                                          Koramangala, Bengaluru, Karnataka 560095
+                                        </a>
+                                      </div>
+                                    </div>
 
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
 
-</section>
+                      </section>
 
-<!-- Spinner Overlay -->
-<div *ngIf="isLoading" class="fixed inset-0 bg-black/80 bg-opacity-80 flex items-center justify-center z-50">
-  <div class="relative w-32 h-32">
-    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-6 h-6 border-2 border-yellow-500 rounded-full animate-blob-top"></div>
-    <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-6 h-6 border-2 border-yellow-500 rounded-full animate-blob-bottom"></div>
-    <div class="absolute left-0 top-1/2 transform -translate-y-1/2 w-6 h-6 border-2 border-yellow-500 rounded-full animate-blob-left"></div>
+                      <!-- Spinner Overlay -->
+                      @if (isLoading) {
+                        <div class="fixed inset-0 bg-black/80 bg-opacity-80 flex items-center justify-center z-50">
+                          <div class="relative w-32 h-32">
+                            <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-6 h-6 border-2 border-yellow-500 rounded-full animate-blob-top"></div>
+                            <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-6 h-6 border-2 border-yellow-500 rounded-full animate-blob-bottom"></div>
+                            <div class="absolute left-0 top-1/2 transform -translate-y-1/2 w-6 h-6 border-2 border-yellow-500 rounded-full animate-blob-left"></div>
+                            <div class="absolute w-6 h-6 gold-gradient rounded-full animate-blob-move"></div>
+                            <!-- Logo in center -->
+                            <div class="absolute inset-0 flex items-center justify-center">
+                              <img   loading="lazy" src="/favicon.png" alt="Logo" class="w-12 h-12 rotate-logo">
+                            </div>
+                          </div>
+                        </div>
+                      }
 
-    <div class="absolute w-6 h-6 gold-gradient rounded-full animate-blob-move"></div>
 
-    <!-- Logo in center -->
-    <div class="absolute inset-0 flex items-center justify-center">
-      <img   loading="lazy" src="/favicon.png" alt="Logo" class="w-12 h-12 rotate-logo">
-    </div>
-  </div>
-</div>
-
-
-<app-footer></app-footer>
+                      <app-footer></app-footer>

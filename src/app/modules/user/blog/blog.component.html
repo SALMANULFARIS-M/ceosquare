@@ -3,7 +3,7 @@
 <div
   class="relative bg-fixed bg-center bg-cover"
   style="background-image: url('/bg-image.jpeg')"
->
+  >
   <div class="absolute inset-0">
     <div
       class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70 backdrop-blur-sm"
@@ -12,15 +12,15 @@
   </div>
   <div
     class="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8 text-center"
-  >
+    >
     <h1
       class="text-4xl sm:text-5xl lg:text-6xl playfair flex items-center justify-center text-white tracking-tight"
-    >
+      >
       Blogs
     </h1>
     <p
       class="mt-6 max-w-3xl mx-auto text-xl text-indigo-100 poppins-light text-justify md:text-center"
-    >
+      >
       Explore insightful articles, expert interviews, and leadership lessons
       from top CEOs and entrepreneurs around the world. Stay inspired and
       informed with the latest stories, strategies, and innovations shaping the
@@ -37,35 +37,34 @@
   <div class="relative max-w-6xl mx-auto text-center">
     <h2
       class="gold-gradient-text text-4xl md:text-5xl font-bold mb-12 playfair"
-    >
+      >
       📝 Latest Blogs
     </h2>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
-      <div
-        *ngFor="let blog of blogs"
-        class="relative rounded-2xl p-6 shadow-xl border border-white/10 bg-black/50 backdrop-blur-sm transition transform hover:scale-105"
-      >
-        <!-- Blog Title -->
-        <h3
-          class="text-2xl font-semibold gold-gradient-text mb-3 playfair transition"
-        >
-          {{ blog.title }}
-        </h3>
-
-        <!-- Short Description -->
-        <p class="text-indigo-100 text-sm poppins-light mb-4 line-clamp-3">
-          {{ blog.excerpt }}
-        </p>
-
-        <!-- Read More Button -->
-        <a
-          [routerLink]="['/blog', blog.slug]"
-          class="inline-block text-indigo-400 hover:text-indigo-300 font-medium transition"
-        >
-          Read More →
-        </a>
-      </div>
+      @for (blog of blogs; track blog) {
+        <div
+          class="relative rounded-2xl p-6 shadow-xl border border-white/10 bg-black/50 backdrop-blur-sm transition transform hover:scale-105"
+          >
+          <!-- Blog Title -->
+          <h3
+            class="text-2xl font-semibold gold-gradient-text mb-3 playfair transition"
+            >
+            {{ blog.title }}
+          </h3>
+          <!-- Short Description -->
+          <p class="text-indigo-100 text-sm poppins-light mb-4 line-clamp-3">
+            {{ blog.excerpt }}
+          </p>
+          <!-- Read More Button -->
+          <a
+            [routerLink]="['/blog', blog.slug]"
+            class="inline-block text-indigo-400 hover:text-indigo-300 font-medium transition"
+            >
+            Read More →
+          </a>
+        </div>
+      }
     </div>
   </div>
 </section>

@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from '../../../shared/components/header/header.component';
 import { FooterComponent } from '../../../shared/components/footer/footer.component';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+
 import { ToastrService } from 'ngx-toastr';
 import { ContactService } from '../../../core/services/contact.service';
 
 @Component({
   selector: 'app-contact',
-  imports: [HeaderComponent, FooterComponent, ReactiveFormsModule, CommonModule],
+  imports: [HeaderComponent, FooterComponent, ReactiveFormsModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css'
 })
