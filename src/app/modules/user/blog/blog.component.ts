@@ -22,7 +22,14 @@ export class BlogComponent {
       date: '2025-10-30',
       author: 'CEO Square Team',
     },
+    {
+      id: 2,
+      title: 'How to Build Trust as a Leader: 10 Proven Strategies for Modern CEOs',
+      slug: 'how-to-build-trust-as-a-leader-2025',
+      excerpt: "Learn how to build trust as a leader with practical, actionable strategies CEOs and...",
+      date: '2025-11-19',
+      author: 'CEO Square Team',
+    }
+
   ];
-
-
 }

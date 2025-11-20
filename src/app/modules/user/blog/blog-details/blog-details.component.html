@@ -4,7 +4,9 @@
     class="absolute inset-0 bg-gradient-to-r from-black/30 via-black/50 to-black/30 backdrop-blur-sm"
   ></div>
 
-  <div class="relative max-w-5xl lg:max-w-7xl mx-auto text-left mt-5 rounded-2xl p-6 shadow-xl border border-white/10 bg-black/50 backdrop-blur-sm ">
+  <div
+    class="relative max-w-5xl lg:max-w-7xl mx-auto text-left mt-5 rounded-2xl p-6 shadow-xl border border-white/10 bg-black/50 backdrop-blur-sm"
+  >
     <h1 class="text-4xl md:text-5xl font-bold gold-gradient-text playfair mb-6">
       {{ blog.title }}
     </h1>
@@ -15,26 +17,28 @@
     <!-- Here you’ll render your blog content -->
     <div class="text-indigo-100 leading-relaxed space-y-4 poppins-light">
       @for (block of blog.content; track block) {
-        <div>
-          @if (block.type === 'h2') {
-            <h2 class="text-2xl mt-6 mb-2 uppercase montserrat">
-              {{ block.text }}
-            </h2>
+      <div>
+        @if (block.type === 'h2') {
+        <h2 class="text-2xl mt-6 mb-2 uppercase montserrat">
+          {{ block.text }}
+        </h2>
+        } @if (block.type === 'h3') {
+        <h3 class="text-xl mt-4 mb-2 text-white">
+          {{ block.text }}
+        </h3>
+        } @if (block.type === 'p') {
+        <p
+          class="text-lg text-gray-300 mb-4"
+          [innerHTML]="formatBlockText(block.text)"
+        ></p>
+        } @if (block.type === 'ul') {
+        <ul class="list-disc list-inside space-y-1 text-gray-300 text-lg">
+          @for (item of block.items; track item) {
+          <li [innerHTML]="item"></li>
           }
-          @if (block.type === 'h3') {
-            <h3
-              class="text-xl mt-4 mb-2 text-white"
-              >
-              {{ block.text }}
-            </h3>
-          }
-          @if (block.type === 'p') {
-            <p
-              class="text-lg text-gray-300 mb-4"
-              [innerHTML]="formatBlockText(block.text)"
-            ></p>
-          }
-        </div>
+        </ul>
+        }
+      </div>
       }
     </div>
   </div>
