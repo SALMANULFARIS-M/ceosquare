@@ -163,7 +163,7 @@
     },
     {
       "type": "p",
-      "text": "Read our previous blog – Top 10 Leadership Podcasts to Follow in 2025 for more insights."
+      "text": "Read our previous blog – <a href='https://www.ceosquare.in/blog/top-leadership-podcasts-2025' target='_blank' class='text-blue-400 underline'>Top 10 Leadership Podcasts to Follow in 2025</a> for more insights."
     },
 
     {
@@ -285,7 +285,7 @@
     },
     {
       "type": "p",
-      "text": "Join CEO Square Membership."
+      "text": "<a href='https://www.ceosquare.in/membership' target='_blank' class='text-blue-400 underline'>Join CEO Square Membership.</a>"
     },
 
     {
@@ -391,7 +391,7 @@
     },
     {
       "type": "p",
-      "text": "Join CEO Square — a global community of founders & CEOs who grow together through real conversations, peer learning & leadership development."
+      "text": "Join <a href='https://wa.me/9035052278' target='_blank' class='text-blue-400 underline'>CEO Square</a> — a global community of founders & CEOs who grow together through real conversations, peer learning & leadership development."
     }
   ]
 }
