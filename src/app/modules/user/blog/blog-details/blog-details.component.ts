@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FooterComponent } from '../../../../shared/components/footer/footer.component';
 import { HeaderComponent } from '../../../../shared/components/header/header.component';
 import { ActivatedRoute } from '@angular/router';
-import blogsData from '../../../../../assets/blogs/blog-contents.json';
+import {blogsData} from '../../../../../assets/blogs/index';
 import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
@@ -12,6 +12,7 @@ import { Meta, Title } from '@angular/platform-browser';
   templateUrl: './blog-details.component.html',
   styleUrl: './blog-details.component.css'
 })
+
 export class BlogDetailsComponent implements OnInit {
   blog: any;
 
